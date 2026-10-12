@@ -1,0 +1,13 @@
+interface:
+  display_name: "ContentFactory"
+  short_description: "Create videos with ContentFactory MCP tools"
+  default_prompt: "Use $contentfactory-video to create my video through ContentFactory in my preferred language."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "content-factory"
+      description: "Verified ContentFactory Media, Generate and Compose tools"
+      transport: "streamable_http"
+      url: "https://content-factory.art/mcp"
+policy:
+  allow_implicit_invocation: true
