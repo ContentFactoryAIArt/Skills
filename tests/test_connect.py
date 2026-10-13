@@ -62,7 +62,7 @@ class ConnectorTests(unittest.TestCase):
         discovery.assert_not_called()
         self.assertEqual(before, after)
         self.assertIn(Path("references/blender.md"), after)
-        self.assertIn(Path("references/ru.md"), after)
+        self.assertIn(Path("references/language.md"), after)
         self.assertIn(Path("agents/openai.yaml"), after)
 
     def test_different_skill_is_preserved(self):

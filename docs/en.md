@@ -1,4 +1,46 @@
-# Connect ContentFactory
+# Get started with ContentFactory
+
+Create videos, images, voiceovers, music, and editable compositions with your AI
+agent through ContentFactory. The skill instructions are in English, while your
+conversation and creative output can use the language you choose.
+
+## Start in four steps
+
+1. Install Python 3.11+ and the current Codex CLI. Pick an existing project folder.
+2. [Download this repository as a ZIP](https://github.com/ContentFactoryAIArt/Skills/archive/refs/heads/main.zip)
+   and extract it, or run:
+
+   ```sh
+   git clone https://github.com/ContentFactoryAIArt/Skills.git
+   cd Skills
+   ```
+
+3. From the extracted or cloned repository folder, run the helper with your own
+   existing project folder:
+
+   ```powershell
+   python scripts/connect.py --workspace "C:\Projects\MyVideo"
+   ```
+
+   On macOS or Linux, use `python3` and a path such as
+   `~/projects/my-video`. Finish sign-in in the browser and select your
+   projects, permissions, and access lifetime.
+4. Open or reload the project in Codex and ask:
+
+   > Use $contentfactory-video to make a 30-second product video in English.
+   > Work in my selected project and show the expected cost before paid work.
+
+If setup reports that the unified endpoint is unavailable, the corresponding
+ContentFactory server release is needed. `--install-only` can prepare the skill,
+but creative work still needs a live connection.
+
+## Contents
+
+- [Codex setup details](#codex-guided-setup)
+- [Other MCP clients](#other-mcp-clients)
+- [Keep or recover your connection](#keep-the-connection)
+- [Tools and privacy](#tools-and-privacy)
+- [All ten language guides](../README.md#choose-your-language)
 
 ContentFactory has one public MCP address for Media, Generate and Compose:
 
@@ -18,14 +60,8 @@ endpoint is reported without adding legacy connections or weakening security.
 ## Codex: Guided Setup
 
 Requires Python 3.11+ and the official Codex CLI with
-`--oauth-client-registration` and `--oauth-resource` support. Get this public
-repository through GitHub's Download ZIP or clone it:
-
-```sh
-git clone https://github.com/ContentFactoryArt/Skill.git
-cd Skill
-python scripts/connect.py --client codex --workspace /path/to/your/project
-```
+`--oauth-client-registration` and `--oauth-resource` support. Run the helper
+from the repository folder as shown above; `--client codex` is optional.
 
 On Windows, use a quoted existing path, for example
 `--workspace "C:\Projects\MyVideo"`. The helper installs
@@ -144,8 +180,8 @@ asks the native CLI for the one named server's configuration, and lets that CLI
 own OAuth. It does not read credential stores, receive tokens, alter unrelated
 servers or print raw client configuration.
 
-English and Russian setup/overview text are included. The creative skill follows
-the user's language, including languages not yet represented by translated docs.
+Start guides are available in all ten languages supported by the public site.
+The creative skill follows the user's chosen language.
 
 Official client references: https://developers.openai.com/codex/mcp/ and
 https://code.claude.com/docs/en/mcp and https://code.claude.com/docs/en/skills.

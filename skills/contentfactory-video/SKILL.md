@@ -61,8 +61,8 @@ Load only the reference relevant to the next work:
   attachment continuity and transparent overlays.
 - [Render failures](references/render-failures.md): bounded native diagnostics
   after an actual failed render.
-- [Russian workflow overview](references/ru.md): the same boundary and workflow
-  summarized in Russian; operation names and detailed contracts remain shared.
+- [Language and localization](references/language.md): English guidance for handling
+  the user's chosen language across conversation and creative outputs.
 
 Discover schemas, models, voices, fonts, profiles and limits through the verified
 connection. Use exact current contracts instead of copied parameters or invented
