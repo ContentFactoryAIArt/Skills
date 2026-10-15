@@ -33,3 +33,13 @@ Wenn dein Client Remote-MCP über Streamable HTTP mit OAuth unterstützt, füge 
 Wenn der Assistent meldet, dass der einheitliche Endpunkt nicht verfügbar ist, wird die passende ContentFactory-Serverversion benötigt. `--install-only` bereitet nur den Skill vor; zum Erstellen ist eine aktive Verbindung erforderlich. Bei einer funktionierenden Verbindung ist keine erneute Anmeldung nötig.
 
 Weitere Hilfe bietet die [ausführliche englische Anleitung](en.md).
+
+## Fotos, Video und 3D mit Claude Code
+
+ContentFactory ist ein kostenloser Browser-Editor für Fotos, Video und 3D. Dein eigener Agent kann auch komplette Videos erstellen. Generierung und KI-Analyse können kostenpflichtig sein.
+
+Installiere die aktuelle Claude Code CLI. Diese Alternative richtet den Skill und einen einzigen MCP-Zugang ein. Schließe die Anmeldung im Browser ab und verwende /contentfactory-video. Pro Client ist eine ContentFactory-Autorisierung nötig; bestehende Verbindungen werden wiederverwendet.
+
+```powershell
+python scripts/connect.py --client claude --workspace "C:\Projects\MyVideo"
+```

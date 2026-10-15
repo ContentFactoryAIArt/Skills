@@ -33,3 +33,13 @@
 如果安装程序提示统一端点不可用，需要等待相应的 ContentFactory 服务器版本。`--install-only` 只能预先安装技能；真正开始创作仍需可用的连接。已有正常连接时无需重新登录。
 
 详细排查步骤见[英文指南](en.md)。
+
+## 通过 Claude Code 编辑照片、视频和 3D
+
+ContentFactory 是免费的浏览器照片、视频和 3D 编辑器。你也可以让自己的智能体制作完整视频。AI 生成和分析可能收费。
+
+安装最新版 Claude Code CLI，然后使用下面的替代命令。它会安装技能并配置一个 MCP 连接。在浏览器中完成授权后，使用 /contentfactory-video。每个客户端只需一次 ContentFactory 授权；已有连接会被复用。
+
+```powershell
+python scripts/connect.py --client claude --workspace "C:\Projects\MyVideo"
+```

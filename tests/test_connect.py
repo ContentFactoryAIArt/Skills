@@ -135,6 +135,15 @@ class ConnectorTests(unittest.TestCase):
         self.assertNotIn("private-diagnostic-test-value", self.output.getvalue())
         self.assertEqual(list(self.workspace.iterdir()), [])
 
+    def test_codex_missing_server_tolerates_only_known_alias_warning(self):
+        missing = f"Error: No MCP server named '{connect.SERVER_NAME}' found."
+        with patch.object(connect, "run_cli", return_value=cli_result(1, stderr=
+                          "WARNING: proceeding, even though we could not create PATH aliases: temporary home\n" + missing)):
+            self.assertFalse(connect.connection_exists("codex", self.workspace))
+        with patch.object(connect, "run_cli", return_value=cli_result(1, stderr="unexpected config error\n" + missing)):
+            with self.assertRaises(connect.SetupError):
+                connect.connection_exists("codex", self.workspace)
+
     def test_untrusted_endpoint_disabled_or_custom_auth_are_not_modified(self):
         cases = [
             server_config(transport={"type": "streamable_http", "url": "https://other.example/mcp"}),
@@ -184,6 +193,77 @@ class ConnectorTests(unittest.TestCase):
                 reference = (document.parent / target.split("#")[0]).resolve()
                 self.assertTrue(reference.is_relative_to(root), (document, target))
                 self.assertTrue(reference.is_file(), (document, target))
+
+    def test_claude_install_is_native_and_self_contained(self):
+        with patch.object(connect, "run_cli") as native:
+            self.assertEqual(self.run_main("--client", "claude", "--install-only"), 0)
+        native.assert_not_called()
+        root = self.workspace / ".claude" / "skills" / connect.SKILL_NAME
+        self.assertTrue((root / "SKILL.md").is_file())
+        for name in ("photo", "effects", "editors", "blender"):
+            self.assertTrue((root / "references" / (name + ".md")).is_file())
+        self.assertFalse((self.workspace / ".agents").exists())
+
+    def test_claude_first_setup_adds_once_and_authorizes_once(self):
+        calls = [cli_result(1, stderr='No MCP server named "content-factory". Run `claude mcp add` to add one.'),
+                 cli_result(stdout="--no-browser"), cli_result(), cli_result()]
+        with patch.object(connect.shutil, "which", return_value="claude"), \
+                patch.object(connect, "run_cli", side_effect=calls) as native, \
+                patch.object(connect, "check_discovery"):
+            self.assertEqual(self.run_main("--client", "claude"), 0)
+        self.assertEqual(native.call_args_list[-2].args[0], ["claude", "mcp", "add", "--transport", "http",
+                                                          "--scope", "local", "content-factory", connect.ENDPOINT])
+        self.assertEqual(native.call_args_list[-1].args[0], ["claude", "mcp", "login", "content-factory"])
+        self.assertTrue(native.call_args_list[-1].kwargs["interactive"])
+        self.assertIn("/contentfactory-video", self.output.getvalue())
+
+    def test_claude_existing_connection_and_explicit_recovery(self):
+        config = f"content-factory:\n  Scope: Local config (private to you in this project)\n  Status: Needs authentication\n  Type: http\n  URL: {connect.ENDPOINT}\n\nTo remove this server, run: claude mcp remove content-factory -s local\n"
+        with patch.object(connect.shutil, "which", return_value="claude"), \
+                patch.object(connect, "run_cli", return_value=cli_result(stdout=config)) as native, \
+                patch.object(connect, "check_discovery") as discovery:
+            self.assertEqual(self.run_main("--client", "claude"), 0)
+        self.assertEqual(native.call_count, 1)
+        discovery.assert_not_called()
+        with patch.object(connect.shutil, "which", return_value="claude"), \
+                patch.object(connect, "run_cli", side_effect=[cli_result(stdout=config), cli_result(stdout="--no-browser"), cli_result()]) as native, \
+                patch.object(connect, "check_discovery"):
+            self.assertEqual(self.run_main("--client", "claude", "--login", "--no-browser"), 0)
+        self.assertEqual(native.call_args_list[-1].args[0], ["claude", "mcp", "login", "content-factory", "--no-browser"])
+
+    def test_claude_rejects_unknown_headers_endpoints_and_disabled_connections(self):
+        config = f"content-factory:\n  Scope: Local config\n  Status: Connected\n  Type: http\n  URL: {connect.ENDPOINT}\n"
+        for changed in [config + "  Headers: Authorization: secret-test-value\n",
+                        config.replace(connect.ENDPOINT, "https://other.example/mcp"),
+                        config.replace("Connected", "Disabled"), config + "  FutureOption: unknown\n"]:
+            with self.subTest(changed=changed), patch.object(connect.shutil, "which", return_value="claude"), \
+                    patch.object(connect, "run_cli", return_value=cli_result(stdout=changed)) as native:
+                self.assertEqual(self.run_main("--client", "claude"), 1)
+                self.assertEqual(native.call_count, 1)
+        self.assertNotIn("secret-test-value", self.output.getvalue())
+        self.assertEqual(list(self.workspace.iterdir()), [])
+
+    def test_claude_old_client_fails_before_install_or_add(self):
+        with patch.object(connect.shutil, "which", return_value="claude"), \
+                patch.object(connect, "run_cli", side_effect=[cli_result(1, stderr='No MCP server named "content-factory". Run `claude mcp add` to add one.'), cli_result(1)]), \
+                patch.object(connect, "check_discovery") as discovery:
+            self.assertEqual(self.run_main("--client", "claude"), 1)
+        discovery.assert_not_called()
+        self.assertEqual(list(self.workspace.iterdir()), [])
+
+    def test_check_is_read_only_and_separate_from_authentication(self):
+        with patch.object(connect, "run_cli") as native, patch.object(connect, "check_discovery") as discovery:
+            self.assertEqual(self.run_main("--check"), 0)
+        native.assert_not_called()
+        discovery.assert_called_once()
+        self.assertEqual(list(self.workspace.iterdir()), [])
+        self.assertIn("No login", self.output.getvalue())
+
+    def test_interactive_oauth_keeps_the_terminal_for_manual_callback(self):
+        with patch.object(connect.subprocess, "run", return_value=cli_result()) as process:
+            connect.run_cli(["claude", "mcp", "login", "content-factory"], self.workspace, interactive=True)
+        self.assertFalse(process.call_args.kwargs["capture_output"])
+        self.assertIsNone(process.call_args.kwargs["timeout"])
 
 
 if __name__ == "__main__":

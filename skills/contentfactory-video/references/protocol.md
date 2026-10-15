@@ -7,6 +7,22 @@ names, not permission to call another server that advertises them.
 
 ## Discovery and State
 
+The connection exposes four envelope tools: `operations_list`,
+`operations_describe`, `operations_read` and `operations_execute`. Names such as
+`photo_process` below are operation IDs inside those envelopes, not additional
+client tools. Page relevant list results with the returned continuation anchor.
+Read `inputSchema.documentJson` and `outputSchema.documentJson` from a description;
+send `operationId`, its exact `contractRevision` and schema-valid `arguments`
+through the read or execute envelope indicated by `invocationKind`.
+Describe related operations in an ordered batch when supported. A selected
+schema subtree does not replace the full operation schema or its requirements.
+
+For first use, discover and read `projects_list`, then select an authorized
+project. An empty project list needs a project created/selected in ContentFactory
+or an updated grant; do not invent an ID. Confirm relevant capabilities with a
+read before proposing paid work. A configured server and a successful login
+alone do not prove that project membership, a worker or a provider is available.
+
 Discover relevant operations and describe only the next required contracts.
 Use their exact revisions and schemas. Discover supported models, voices, fonts
 and profiles rather than guessing. Refresh affected discovery when contracts

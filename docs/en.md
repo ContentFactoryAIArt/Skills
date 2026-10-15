@@ -1,187 +1,149 @@
 # Get started with ContentFactory
 
-Create videos, images, voiceovers, music, and editable compositions with your AI
-agent through ContentFactory. The skill instructions are in English, while your
-conversation and creative output can use the language you choose.
+ContentFactory is a free browser editor for photos, video and 3D. Connect your
+own Codex or Claude Code agent to edit those projects or produce complete videos.
+Generation and model-assisted analysis can cost money; the agent must use your
+budget and live quotes. Your agent subscription is separate from ContentFactory.
 
 ## Start in four steps
 
-1. Install Python 3.11+ and the current Codex CLI. Pick an existing project folder.
-2. [Download this repository as a ZIP](https://github.com/ContentFactoryAIArt/Skills/archive/refs/heads/main.zip)
-   and extract it, or run:
-
-   ```sh
-   git clone https://github.com/ContentFactoryAIArt/Skills.git
-   cd Skills
-   ```
-
-3. From the extracted or cloned repository folder, run the helper with your own
-   existing project folder:
+1. Install Python 3.11+ and the current official [Codex CLI](https://developers.openai.com/codex/cli)
+   or [Claude Code](https://code.claude.com/docs/en/setup). Choose an existing
+   project folder. You need a ContentFactory account with access to a project;
+   setup does not create an account or grant project membership.
+2. [Download and extract the ZIP](https://github.com/ContentFactoryAIArt/Skills/archive/refs/heads/main.zip),
+   or clone `https://github.com/ContentFactoryAIArt/Skills.git` and open that folder.
+3. Run **one** command for your client, replacing the existing project path:
 
    ```powershell
-   python scripts/connect.py --workspace "C:\Projects\MyVideo"
+   python scripts/connect.py --client codex --workspace "C:\Projects\MyVideo"
+   python scripts/connect.py --client claude --workspace "C:\Projects\MyVideo"
    ```
 
-   On macOS or Linux, use `python3` and a path such as
-   `~/projects/my-video`. Finish sign-in in the browser and select your
-   projects, permissions, and access lifetime.
-4. Open or reload the project in Codex and ask:
+   On macOS/Linux use `python3` and an existing path such as `~/projects/my-video`.
+   Finish the native browser flow. Select projects, permissions, spending access
+   and lifetime. Account sign-in and consent may be separate screens in one flow.
+4. Open/reload that project in your client. Use `$contentfactory-video` in Codex
+   or `/contentfactory-video` in Claude Code. For example:
 
-   > Use $contentfactory-video to make a 30-second product video in English.
-   > Work in my selected project and show the expected cost before paid work.
+   > Correct the exposure and color in my selected photo, preserve the original,
+   > and save the look as a recipe. Do not use paid generation.
 
-If setup reports that the unified endpoint is unavailable, the corresponding
-ContentFactory server release is needed. `--install-only` can prepare the skill,
-but creative work still needs a live connection.
+   Or:
 
-## Contents
+   > Make a 30-second product video from my selected assets. Use captions, music
+   > and a 3D title if supported. Show the plan and quote before paid work.
+   > Keep the timeline editable and deliver the final video.
 
-- [Codex setup details](#codex-guided-setup)
-- [Other MCP clients](#other-mcp-clients)
-- [Keep or recover your connection](#keep-the-connection)
-- [Tools and privacy](#tools-and-privacy)
-- [All ten language guides](../README.md#choose-your-language)
-
-ContentFactory has one public MCP address for Media, Generate and Compose:
-
-```text
-https://content-factory.art/mcp
-```
-
-Choose Streamable HTTP in your agent. Sign in through the ContentFactory browser
-page, select projects and permissions, and choose a token lifetime. Enable paid
-operations only when you need them. Account sign-in and approval of the MCP grant
-can be separate screens in this one connection flow.
-
-This unified endpoint requires the corresponding server release. The helper
-checks public OAuth discovery before starting authorization; an unavailable
-endpoint is reported without adding legacy connections or weakening security.
+The skill also covers masks, effects, vector artwork, audio DSP, materials, UVs,
+lighting, Grease Pencil and Blender animation. It discovers current capabilities;
+it does not promise every desktop editor feature or every provider model.
+Instructions are in English; conversation and creative output follow your language.
+Upload local media through ContentFactory first and select the resulting assets.
 
 ## Codex: Guided Setup
 
-Requires Python 3.11+ and the official Codex CLI with
-`--oauth-client-registration` and `--oauth-resource` support. Run the helper
-from the repository folder as shown above; `--client codex` is optional.
+The helper installs `.agents/skills/contentfactory-video` in your project.
+It uses native `codex mcp get/add/login` and requires the documented
+`--oauth-client-registration` and `--oauth-resource` options. Update Codex if the
+helper reports missing options. The CLI manages the MCP configuration at its
+normal scope; the skill is project-local.
 
-On Windows, use a quoted existing path, for example
-`--workspace "C:\Projects\MyVideo"`. The helper installs
-`.agents/skills/contentfactory-video` in that project and adds the named
-`content-factory` server through Codex's native CLI. MCP configuration is managed
-by the client's normal configuration scope; the skill itself is project-local.
+A new `codex mcp add` starts OAuth itself. Setup does **not** follow it with a
+second login. An existing compatible named connection is preserved.
 
-If the same named connection is already enabled at the correct address, the
-helper retains it and does not add the server or sign in again. It refuses a
-different endpoint or custom authentication configuration rather than replacing
-it. Existing skill files must match the package; edits are never overwritten.
+## Claude Code: Guided Setup
 
-To inspect the plan without changing files, contacting the server or reading
-client configuration:
+Use `--client claude`. The helper installs `.claude/skills/contentfactory-video`,
+adds `content-factory` with native HTTP transport and local scope (private to you
+in this project), then runs `claude mcp login content-factory` once. Current
+Claude Code is required; older versions without native MCP login must be updated.
+Existing compatible connections at a visible scope are reused without re-login.
 
-```sh
-python scripts/connect.py --workspace /path/to/your/project --dry-run
-```
-
-To install instructions when MCP is already configured through your app, without
-touching the CLI or starting OAuth:
+Manual equivalent when the skill is already installed:
 
 ```sh
-python scripts/connect.py --workspace /path/to/your/project --install-only
+claude mcp add --transport http --scope local content-factory https://content-factory.art/mcp
+claude mcp login content-factory
 ```
 
-Reload your workspace's skills in Codex and invoke `$contentfactory-video`.
-For example: "Use $contentfactory-video to make a 30-second product video in
-English. Use my selected project and keep the total spend below my stated budget."
-The first MCP read verifies live access; installation alone does not prove that
-OAuth completed or that a paid provider is available.
+Add only if the named server is absent. `/mcp` inside Claude Code can also manage
+its connection and authorization. Invoke the installed skill with
+`/contentfactory-video`; `agents/openai.yaml` is Codex metadata and is not required
+for Claude Code's skill discovery.
 
 ## Other MCP Clients
 
-In a client supporting remote Streamable HTTP MCP with OAuth and PKCE, add the
-address above as one server. Use the client's normal browser sign-in. If your
-client offers a client-registration setting, choose Dynamic Client Registration
-(DCR). Do not paste passwords, bearer tokens or client secrets into chat.
-
-Install the complete `skills/contentfactory-video` folder through the client's
-normal skill feature. For Claude Code, the project location is
-`.claude/skills/contentfactory-video`; configure the remote server through
-Claude Code's MCP settings and authorize it through its normal `/mcp` flow.
-In Claude Code's terminal, the documented add command is:
-
-```sh
-claude mcp add --transport http content-factory https://content-factory.art/mcp
-```
-
-Run `/mcp` inside Claude Code to finish authorization. If that server is already
-configured at the same address, reuse it instead of adding it again.
-The Python helper currently automates Codex only. Clients without skill support
-can use MCP, but this package does not claim to install a skill into them.
+Use one Streamable HTTP connection to `https://content-factory.art/mcp` with
+OAuth/PKCE and Dynamic Client Registration. Install the whole skill folder
+through the client's skill mechanism if supported. Never copy tokens between
+clients or paste credentials into chat. Using both Codex and Claude Code requires
+one ContentFactory authorization **per client**, not three domain logins each.
 
 ## Keep the Connection
 
-Adding or updating skill instructions does not require OAuth. Reopening a
-conversation does not require adding servers. The client retains its delegated
-credential until expiry or revocation; account/project permission changes can
-also remove access. Keep the same named connection and let the client manage it.
+Reopening a conversation or installing instructions does not require a new
+OAuth grant. Setup reuses a matching enabled connection; it does not test its
+stored credential. After setup, ask the agent to discover and read `projects_list`
+and the relevant capabilities through the unified connection. Choose an authorized
+project. This read proves access without submitting paid work. If no projects are
+visible, create/select a project in ContentFactory and check the grant's projects.
 
-For a confirmed expired, revoked or incomplete grant, explicitly sign in again:
-
-```sh
-python scripts/connect.py --workspace /path/to/your/project --login
-```
-
-This is a recovery action, not a command to run after every successful setup.
-Native `codex mcp add` already starts its OAuth flow; do not routinely follow it
-with a second `codex mcp login`.
-
-The helper relies on Codex opening a browser automatically and suppresses raw
-client output. If no browser opens, press Ctrl+C. The native add may already
-have saved its server entry. From your own terminal, recover that existing
-connection with the native manual browser flow:
+For a confirmed expired, revoked or interrupted grant, use explicit recovery:
 
 ```sh
-codex mcp login content-factory --oauth-client-registration dcr --no-browser
+python scripts/connect.py --client codex --workspace /path/to/project --login
+python scripts/connect.py --client claude --workspace /path/to/project --login
 ```
 
-Follow the URL and callback instructions shown by Codex in your terminal; do
-not paste these URLs into chat. If Codex explicitly reports that the server
-does not exist, add it once directly, then follow its normal browser flow:
+Do not run both unless you are recovering both clients. Native OAuth keeps its
+terminal visible, so browser/manual callback instructions are not hidden. On a
+headless machine, Claude supports `--no-browser`; Codex supports it for recovery
+with `--login`. If first-time Codex setup cannot open a browser, interrupt it and
+repeat with `--login --no-browser` once its named server entry exists. Follow
+native callback instructions in your terminal; do not paste sign-in URLs in chat.
+
+Legacy `/mcp/media`, `/mcp/generate` and `/mcp/compose` grants have different
+OAuth audiences. Moving to `/mcp` needs one new consent. The helper does not
+remove old entries; verify the unified connection before disabling them.
+Manage/revoke grants at https://content-factory.art/settings/tokens. Expiry,
+revocation and membership changes can require authorization again.
+
+## Diagnostics and Safe Installation
 
 ```sh
-codex mcp add content-factory --url https://content-factory.art/mcp --oauth-client-registration dcr --oauth-resource https://content-factory.art/mcp
+# Preview without client access, writes or network:
+python scripts/connect.py --client claude --workspace . --dry-run
+# Check public OAuth discovery without logging in or changing anything:
+python scripts/connect.py --workspace . --check
+# Install only (choose your client):
+python scripts/connect.py --client claude --workspace /path/to/project --install-only
 ```
 
-Only use this fallback when setup was interrupted or failed, after the unified
-server endpoint is available. If you manually configured MCP, run the helper
-with `--install-only` to install its instructions without another login.
-
-Existing `/mcp/media`, `/mcp/generate` and `/mcp/compose` grants are bound to their
-original resources. Moving to `/mcp` requires one new consent. Verify the unified
-connection, then disable old entries in your client. The helper does not delete
-old configuration or revoke tokens for you.
-
-Manage/revoke delegated tokens at https://content-factory.art/settings/tokens.
-Use the shortest lifetime that fits your work. Non-expiring access is optional
-and requires explicit consent; it remains revocable. One shared endpoint does
-not remove project boundaries, permissions, spending limits or PKCE validation.
+A discovery pass is not an authenticated tool call or a media acceptance test.
+An unavailable unified endpoint needs an operator fix; the helper never adds three
+legacy servers as a fallback. It leaves other MCP servers and credentials alone.
+A conflicting endpoint/custom authentication is not overwritten. Existing skill
+files must match the package; preserve edited copies before removing the exact
+old skill directory and reinstalling an updated release. Do not delete unrelated
+skills or client configuration. Symbolic links and junctions are refused.
 
 ## Tools and Privacy
 
-The skill uses only tools whose verified server endpoint is
-`https://content-factory.art/mcp`. An alias or familiar tool name is insufficient.
-If your client hides server provenance, verify/configure that connection before
-running the skill. Client tool approvals remain enabled; the skill is guidance,
-not a sandbox or a replacement for server authorization.
+The skill uses only tools from the verified `https://content-factory.art/mcp`
+connection. Client settings provide provenance; a familiar tool alias is not
+proof. Four envelope tools discover, describe, read and execute the live catalog.
+The agent loads only the workflow references needed for the task and saves useful
+recovery state through ContentFactory.
 
-There are no external AI, browser, local media-processing or upload fallbacks.
-Upload local sources through ContentFactory and select their owned assets. If a
-native capability or review is unavailable, the agent reports the limitation.
-The setup helper is separate from creative execution: it checks public discovery,
-asks the native CLI for the one named server's configuration, and lets that CLI
-own OAuth. It does not read credential stores, receive tokens, alter unrelated
-servers or print raw client configuration.
+There are no local processing, browser automation, external-provider or alternate
+MCP fallbacks for creative work. The setup helper is separate from execution and
+lets each native client manage OAuth. It does not read credential files, copy
+access tokens or print raw configuration. Client approvals and server permission,
+project, lifetime and budget checks remain in force.
 
-Start guides are available in all ten languages supported by the public site.
-The creative skill follows the user's chosen language.
-
-Official client references: https://developers.openai.com/codex/mcp/ and
-https://code.claude.com/docs/en/mcp and https://code.claude.com/docs/en/skills.
+Official references: [Codex MCP](https://developers.openai.com/codex/mcp/),
+[Codex skills](https://developers.openai.com/codex/skills/),
+[Claude Code MCP](https://code.claude.com/docs/en/mcp),
+[Claude Code skills](https://code.claude.com/docs/en/skills).
+[All ten language guides](../README.md#choose-your-language).

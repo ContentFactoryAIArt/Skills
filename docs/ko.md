@@ -33,3 +33,13 @@ ContentFactory와 AI 에이전트로 동영상, 이미지, 내레이션, 음악,
 통합 엔드포인트를 사용할 수 없다는 메시지가 나오면 해당 ContentFactory 서버 릴리스가 필요합니다. `--install-only`는 스킬만 준비하며, 실제 제작에는 작동하는 연결이 필요합니다. 기존 연결이 정상이라면 다시 로그인하지 않아도 됩니다.
 
 자세한 해결 방법은 [영어 안내서](en.md)를 참고하세요.
+
+## Claude Code로 사진, 영상, 3D 편집
+
+ContentFactory는 무료 브라우저 사진, 영상, 3D 편집기입니다. 자신의 에이전트로 완성된 영상을 만들 수도 있습니다. AI 생성과 분석에는 비용이 들 수 있습니다.
+
+최신 Claude Code CLI를 설치한 뒤 아래 대체 명령을 실행하세요. 스킬과 단일 MCP 연결이 설정됩니다. 브라우저에서 인증을 완료하고 /contentfactory-video를 사용하세요. 클라이언트마다 ContentFactory 인증을 한 번 진행하며 기존 연결은 재사용합니다.
+
+```powershell
+python scripts/connect.py --client claude --workspace "C:\Projects\MyVideo"
+```

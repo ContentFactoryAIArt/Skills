@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Install the public skill and connect Codex through its native OAuth flow."""
+"""Install ContentFactory for Codex or Claude Code with one native OAuth flow."""
 
 from __future__ import annotations
 
@@ -41,7 +41,7 @@ MESSAGES = {
         "config": "Codex could not safely describe this named connection. Inspect it through your client's MCP settings; raw configuration was not printed.",
         "different": "The named server already exists with a different endpoint, disabled state or custom authentication. No connection was changed. Review it in Codex settings.",
         "metadata": "The unified ContentFactory endpoint is not available or its OAuth discovery is incompatible. No connection was added. Retry after the server release or use --install-only to install instructions.",
-        "oauth": "The native Codex OAuth command did not complete. A server entry may remain. Resolve the sign-in issue, then repeat with --login; credentials and raw client output were not printed.",
+        "oauth": "The native Codex OAuth command did not complete. A server entry may remain. Follow its terminal instructions and retry with --login. Do not paste sign-in URLs into chat.",
         "storage": "The skill could not be installed. Check destination permissions; a partial installation can be retried without overwriting existing files.",
     },
     "ru": {
@@ -63,7 +63,7 @@ MESSAGES = {
         "config": "Codex не смог безопасно описать это подключение. Проверьте его в настройках MCP; исходная конфигурация не выводилась.",
         "different": "Сервер с таким именем имеет другой адрес, отключен или использует особую авторизацию. Настройки не изменены. Проверьте подключение в Codex.",
         "metadata": "Единый MCP ContentFactory пока недоступен или его OAuth-метаданные несовместимы. Подключение не добавлено. Повторите после обновления сервера либо установите только скилл с --install-only.",
-        "oauth": "Вход через Codex не завершен. Запись сервера могла сохраниться. Устраните проблему входа и повторите с --login; учетные данные и исходный вывод клиента не печатались.",
+        "oauth": "Вход через Codex не завершен. Запись сервера могла сохраниться. Следуйте инструкциям клиента в терминале и повторите с --login. Не отправляйте ссылки авторизации в чат.",
         "storage": "Не удалось установить скилл. Проверьте права на папку; частичную установку можно повторить без перезаписи файлов.",
     },
 }
@@ -89,7 +89,7 @@ def reject_links(path: Path) -> None:
             raise SetupError("links")
 
 
-def installation_plan(workspace: Path, source: Path) -> tuple[Path, dict[Path, bytes]]:
+def installation_plan(workspace: Path, source: Path, client: str = "codex") -> tuple[Path, dict[Path, bytes]]:
     reject_links(workspace)
     if not workspace.is_dir():
         raise SetupError("workspace")
@@ -103,7 +103,7 @@ def installation_plan(workspace: Path, source: Path) -> tuple[Path, dict[Path, b
             files[item.relative_to(source)] = item.read_bytes()
         elif not item.is_dir():
             raise SetupError("source")
-    destination = workspace / ".agents" / "skills" / SKILL_NAME
+    destination = workspace / (".claude" if client == "claude" else ".agents") / "skills" / SKILL_NAME
     reject_links(destination)
     if destination.exists():
         if not destination.is_dir():
@@ -170,21 +170,52 @@ def check_discovery() -> None:
 
 
 def run_cli(command: list[str], workspace: Path, *, interactive: bool = False):
-    # Capture native output so headers or credentials never enter helper diagnostics.
-    # Codex opens the browser itself; the helper never receives OAuth tokens.
+    # Only OAuth inherits the user's terminal, including its manual callback prompt.
+    # Configuration diagnostics stay captured and never enter helper output.
     try:
-        return subprocess.run(command, cwd=workspace, capture_output=True,
+        return subprocess.run(command, cwd=workspace, capture_output=not interactive,
                               text=True, encoding="utf-8", errors="replace",
                               timeout=None if interactive else 15, check=False)
     except (OSError, subprocess.TimeoutExpired) as exc:
         raise SetupError("oauth" if interactive else "config") from exc
 
 
-def connection_exists(cli: str, workspace: Path) -> bool:
+def claude_connection_exists(cli: str, workspace: Path) -> bool:
+    result = run_cli([cli, "mcp", "get", SERVER_NAME], workspace)
+    if result.returncode:
+        expected = f'No MCP server named "{SERVER_NAME}". Run `claude mcp add` to add one.'
+        if not result.stdout.strip() and result.stderr.strip() == expected:
+            return False
+        raise SetupError("config")
+    # Claude currently exposes text, not JSON. Fail closed if its format changes.
+    lines = [line.strip() for line in result.stdout.splitlines() if line.strip()]
+    fields = {}
+    for line in lines:
+        if line == SERVER_NAME + ":" or line.startswith("To remove this server, run: "):
+            continue
+        key, separator, value = line.partition(": ")
+        if not separator or key not in {"Scope", "Status", "Issue", "Type", "URL"} or key in fields:
+            raise SetupError("different")
+        fields[key] = value
+    if (not lines or lines[0] != SERVER_NAME + ":" or fields.get("Type") != "http"
+            or fields.get("URL") != ENDPOINT or not fields.get("Scope")
+            or not fields.get("Status") or "disabled" in fields["Status"].lower()):
+        raise SetupError("different")
+    return True
+
+
+def connection_exists(cli: str, workspace: Path, client: str = "codex") -> bool:
+    if client == "claude":
+        return claude_connection_exists(cli, workspace)
     result = run_cli([cli, "mcp", "get", SERVER_NAME, "--json"], workspace)
     if result.returncode:
         expected = f"Error: No MCP server named '{SERVER_NAME}' found."
-        if not result.stdout.strip() and result.stderr.strip() == expected:
+        lines = result.stderr.strip().splitlines()
+        # Codex may emit this harmless warning for an isolated/temporary home.
+        # Other diagnostics must not be mistaken for an absent server.
+        alias_warning = "WARNING: proceeding, even though we could not create PATH aliases:"
+        if (not result.stdout.strip() and lines and lines[-1] == expected
+                and all(line.startswith(alias_warning) for line in lines[:-1])):
             return False
         raise SetupError("config")
     try:
@@ -204,7 +235,11 @@ def connection_exists(cli: str, workspace: Path) -> bool:
     return True
 
 
-def oauth_command(cli: str, *, existing: bool) -> list[str]:
+def oauth_command(cli: str, *, existing: bool, client: str = "codex") -> list[str]:
+    if client == "claude":
+        if existing:
+            return [cli, "mcp", "login", SERVER_NAME]
+        return [cli, "mcp", "add", "--transport", "http", "--scope", "local", SERVER_NAME, ENDPOINT]
     if existing:
         return [cli, "mcp", "login", SERVER_NAME, "--oauth-client-registration", "dcr"]
     return [cli, "mcp", "add", SERVER_NAME, "--url", ENDPOINT,
@@ -213,47 +248,91 @@ def oauth_command(cli: str, *, existing: bool) -> list[str]:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--client", choices=("codex",), default="codex")
+    parser.add_argument("--client", choices=("codex", "claude"), default="codex")
     parser.add_argument("--workspace", type=Path, required=True,
                         help="existing workspace where the self-contained skill is installed")
     parser.add_argument("--language", choices=tuple(MESSAGES), default="en")
     parser.add_argument("--dry-run", action="store_true", help="show the plan without reads of client config, writes or network")
     parser.add_argument("--install-only", action="store_true", help="install instructions without accessing the client or network")
     parser.add_argument("--login", action="store_true", help="explicitly sign in again for an existing verified connection")
+    parser.add_argument("--check", action="store_true", help="check public OAuth discovery only; no installation, client access or login")
+    parser.add_argument("--no-browser", action="store_true", help="let the native client show its manual sign-in flow in your terminal")
     args = parser.parse_args(argv)
     if args.install_only and args.login:
         parser.error("--install-only and --login cannot be combined")
-    messages = MESSAGES[args.language]
+    if args.check and (args.install_only or args.login or args.no_browser):
+        parser.error("--check cannot be combined with installation or login options")
+    messages = dict(MESSAGES[args.language])
+    client_name = "Claude Code" if args.client == "claude" else "Codex"
+    invocation = "/contentfactory-video" if args.client == "claude" else "$contentfactory-video"
+    if args.client == "claude":
+        messages = {key: value.replace("Codex", client_name).replace("$contentfactory-video", invocation)
+                    for key, value in messages.items()}
+    messages["browser"] = ("Complete one ContentFactory authorization in the native client. Select projects, permissions and lifetime."
+                           if args.language == "en" else "Завершите одну авторизацию ContentFactory в клиенте. Выберите проекты, права и срок доступа.")
+    messages["cli_version"] = (f"Update the official {client_name} CLI; its native MCP login options are required."
+                               if args.language == "en" else f"Обновите официальный {client_name} CLI: нужны команды входа в MCP.")
+    messages["manual_add"] = ("Codex add does not support --no-browser. Run setup without it first; if the browser cannot open, interrupt and retry with --login --no-browser."
+                              if args.language == "en" else "Codex add не поддерживает --no-browser. Сначала запустите без флага; если браузер не открывается, прервите и повторите с --login --no-browser.")
     source = Path(__file__).resolve().parents[1] / "skills" / SKILL_NAME
     workspace = Path(args.workspace.expanduser().absolute())
     try:
-        destination, files = installation_plan(workspace, source)
+        if args.check:
+            if args.dry_run:
+                print(messages["dry"])
+            else:
+                check_discovery()
+                print(("Public OAuth discovery OK: " if args.language == "en" else "Публичные OAuth-метаданные доступны: ") + ENDPOINT)
+                print("No login or authenticated tool call was tested." if args.language == "en"
+                      else "Вход и вызов инструмента с авторизацией не проверялись.")
+            return 0
+        destination, files = installation_plan(workspace, source, args.client)
         print(messages["plan"].format(path=destination))
         print(messages["endpoint"])
         if args.dry_run:
             print(messages["dry"])
             if not args.install_only:
-                print(" ".join(oauth_command("codex", existing=args.login)))
+                if args.no_browser and args.client == "codex" and not args.login:
+                    raise SetupError("manual_add")
+                command = oauth_command(args.client, existing=args.login, client=args.client)
+                if args.no_browser and (args.login or args.client == "codex"):
+                    command.append("--no-browser")
+                print(" ".join(command))
+                if args.client == "claude" and not args.login:
+                    print(" ".join(oauth_command("claude", existing=True, client="claude")
+                                   + (["--no-browser"] if args.no_browser else [])))
             return 0
         if args.install_only:
             install(destination, files)
             print(messages["installed"])
             return 0
-        cli = shutil.which("codex")
+        cli = shutil.which(args.client)
         if cli is None:
             raise SetupError("cli")
-        existing = connection_exists(cli, workspace)
+        existing = connection_exists(cli, workspace, args.client)
         if not existing or args.login:
-            command = oauth_command(cli, existing=existing)
-            help_result = run_cli([cli, "mcp", command[2], "--help"], workspace)
-            required = ["--oauth-client-registration"]
-            if not existing:
+            command = oauth_command(cli, existing=existing, client=args.client)
+            help_result = run_cli([cli, "mcp", "login" if args.client == "claude" else command[2], "--help"], workspace)
+            required = ["--no-browser"] if args.client == "claude" else ["--oauth-client-registration"]
+            if not existing and args.client == "codex":
                 required.append("--oauth-resource")
+            if args.no_browser and args.client == "codex":
+                # Add has no --no-browser flag: configure through the normal flow,
+                # or recover an existing entry with native login.
+                if not existing:
+                    raise SetupError("manual_add")
+                required.append("--no-browser")
             if help_result.returncode or any(flag not in help_result.stdout for flag in required):
                 raise SetupError("cli_version")
             check_discovery()
             install(destination, files)
             print(messages["browser"], flush=True)
+            if args.client == "claude" and not existing:
+                if run_cli(command, workspace).returncode:
+                    raise SetupError("config")
+                command = oauth_command(cli, existing=True, client="claude")
+            if args.no_browser:
+                command.append("--no-browser")
             if run_cli(command, workspace, interactive=True).returncode:
                 raise SetupError("oauth")
         else:

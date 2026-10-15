@@ -33,3 +33,13 @@ Si tu cliente admite MCP remoto Streamable HTTP con OAuth, añade `https://conte
 Si el asistente indica que el endpoint unificado no está disponible, hace falta la versión correspondiente del servidor de ContentFactory. `--install-only` prepara la habilidad, pero para crear contenido se necesita una conexión activa. No vuelvas a iniciar sesión si la conexión actual funciona.
 
 Consulta la [guía detallada en inglés](en.md) para solucionar problemas.
+
+## Fotos, video y 3D con Claude Code
+
+ContentFactory es un editor gratuito de fotos, video y 3D en el navegador. Tu propio agente también puede crear videos completos. La generación y el análisis con IA pueden tener un coste.
+
+Instala la versión actual de Claude Code CLI. Esta alternativa instala el skill y configura una sola conexión MCP. Completa el acceso en el navegador y usa /contentfactory-video. Se requiere una autorización de ContentFactory por cliente; las conexiones existentes se reutilizan.
+
+```powershell
+python scripts/connect.py --client claude --workspace "C:\Projects\MyVideo"
+```

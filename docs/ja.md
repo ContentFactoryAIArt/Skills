@@ -33,3 +33,13 @@ OAuth 対応のリモート Streamable HTTP MCP を使えるクライアント�
 統合エンドポイントを利用できないと表示された場合、対応する ContentFactory サーバーのリリースが必要です。`--install-only` ではスキルだけを準備できますが、制作には稼働中の接続が必要です。既存の接続が正常なら再ログインは不要です。
 
 詳しい対処方法は[英語ガイド](en.md)をご覧ください。
+
+## Claude Code で写真・動画・3D を編集
+
+ContentFactory は無料のブラウザー写真・動画・3D エディターです。自分のエージェントで動画全体を制作することもできます。AI 生成や解析には料金がかかる場合があります。
+
+最新版の Claude Code CLI をインストールし、代わりに以下のコマンドを実行します。スキルと単一の MCP 接続が設定されます。ブラウザーで認証を完了し、/contentfactory-video を使います。ContentFactory の認証はクライアントごとに一度行い、既存の接続は再利用します。
+
+```powershell
+python scripts/connect.py --client claude --workspace "C:\Projects\MyVideo"
+```

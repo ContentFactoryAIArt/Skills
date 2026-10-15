@@ -16,6 +16,29 @@ of copying historical counts. `blender_scene_render` produces a still;
 `blender_scene_export` exports a static scene. Do not manufacture animation by
 submitting one still job per frame.
 
+## Scenes and editor features
+
+Describe the current scene contracts for material overrides, UV editing,
+lighting, distributions and Grease Pencil. Preserve source materials unless the
+user requests a change. An override replaces all mesh slots with the supported
+opaque, texture-free material; it is not arbitrary shader authoring. Colors use
+the contract's linear RGB values. UV authoring supports admitted static triangle
+sources and explicit planar/affine primary-UV changes; it is not automatic unwrap
+or packing. Inspect eligibility and texture-coordinate restrictions first.
+
+Use discovered point, spot, sun or rectangular area lights with explicit units
+and unique IDs. GLB interchange rejects area lights; use BLEND when they must
+remain editable. Static unskinned sources can use discovered linear/radial/grid
+distributions and seeded variation; per-copy rig animation is not implied.
+
+Typed Grease Pencil layers carry drawing frames and strokes; object tracks can
+animate them. Choose BLEND to retain editable drawings. Do not request GLB export
+or mesh diagnostics for a scene containing Grease Pencil when unsupported.
+`blender_scene_inspect` provides evaluated pose, topology, weights, UV or instance
+evidence; `blender_collision_check` checks a bounded set of geometry/time samples.
+Unknown/truncated findings are limitations, and finite samples never prove
+collision-free continuous motion.
+
 ## Animate and Inspect
 
 Describe `blender_animation_render` and submit one typed job for the complete
@@ -34,11 +57,11 @@ Preview lighting/materials are draft evidence. Final rendering needs the final
 mode and an intentional new key. Review pickup, handoff, release, collision
 and landing over their actual motion intervals, not only start/end stills.
 
-Bind held props to the discovered rig node with explicit grip offsets. Confirm
-the live attachment contract supports the intended interval. For static
-attachments, split attached/free intervals at exact composition frames when
-needed, match world poses at boundaries and inspect consecutive contact/release
-frames. Attached roots must obey track restrictions and valid positive scales;
+Bind held props to the discovered rig node with explicit grip offsets. Current
+timed attachments use inclusive start and exclusive end frames. `KEEP_WORLD`
+preserves the pickup pose; `LOCAL_OFFSET` applies an explicit grip and may move
+the prop. Inspect consecutive pickup/release frames and free motion after release.
+Attached roots must obey track restrictions and valid positive scales;
 do not fake continuity with a prop that only happens to align in one still.
 
 ## Output and Composition
