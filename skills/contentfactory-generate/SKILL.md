@@ -1,0 +1,10 @@
+---
+name: contentfactory-generate
+description: Use ContentFactory generative models to create or edit images and video, synthesize speech, music or sound effects, and inspect generation receipts. For deterministic photo-document edits, use the photo skill.
+---
+
+# contentfactory generate
+
+Use the connected ContentFactory MCP server and stay within the user's selected projects and authorization. Search `operations_list` for the needed operations, following continuation anchors when present; use `operations_describe` to obtain the full input schema and current contract revision. Schema descriptions do not install new native tools. Invoke read operations with `operations_read` and effectful operations with `operations_execute`, supplying the exact revision and full arguments. If the contract changed, rediscover it before proceeding. Check the MCP error indicator and typed result status; a transport success alone does not prove the operation succeeded. Preserve native media or resource blocks when returned.
+
+List and describe current model or voice selections for the requested modality; do not invent provider IDs, supported parameters or prices. Image/video requests require both the envelope operation's `contractRevision` and the selected model's separate `modelContractRevision`; build `inputJson` against that model's schema and source slots. `image_foreground_extract` generates a person on a plain white background; it is not a pixel-exact alpha mask and does not provide transparency. Use `generation_preflight` for compatible image/video requests and `content_operation_preflight` for compatible speech, music and effects. A preflight validates and quotes; it does not submit or reserve funds. Count spent, reserved and uncertain amounts against the user's budget. Preserve the idempotency key for an identical command; if execution is uncertain, poll its durable receipt and reconcile charges before retrying. Reuse returned owned file references in later workflows. Distinguish an unavailable tariff, insufficient balance and an over-budget quote.
