@@ -1,6 +1,6 @@
 ---
 name: contentfactory-media
-description: Inspect, process and validate ContentFactory media, audio, video, vectors, presentations, webpage captures, and camera or motion data, including voice-sample checks.
+description: Inspect, process and validate ContentFactory media, audio, video, vectors, presentations, webpage captures, and camera or motion data, including voice-sample checks and speech transcription or timing.
 ---
 
 # contentfactory media
@@ -8,3 +8,5 @@ description: Inspect, process and validate ContentFactory media, audio, video, v
 Use the connected ContentFactory MCP server and stay within the user's selected projects and authorization. Search `operations_list` for the needed operations, following continuation anchors when present; use `operations_describe` to obtain the full input schema and current contract revision. Schema descriptions do not install new native tools. Invoke read operations with `operations_read` and effectful operations with `operations_execute`, supplying the exact revision and full arguments. If the contract changed, rediscover it before proceeding. Check the MCP error indicator and typed result status; a transport success alone does not prove the operation succeeded. Preserve native media or resource blocks when returned.
 
 Inspect the selected owned source with the relevant probe and capability operations before choosing profiles, timestamps, formats or processing settings. Submit only the requested transformation and preserve original files. For durable work, retain the receipt and poll `media_processing_job_get` or `media_processing_job_wait` until terminal; check the requested output and quality. A timeout does not prove cancellation; recover the existing receipt before attempting a replacement. Use the authoritative capabilities for limits and available native features.
+
+For speech content or timing, discover `speech_analysis_models_list`, `speech_timing_preflight`, `speech_transcribe` and `speech_timing_result_get` before proposing a local speech-recognition fallback. Use the current catalog's model selection and the same source pin and spending ceiling for preflight and execution. If discovery omits these operations, report the addressed endpoint's current exposure; do not conclude that the product has no transcription implementation. A technical voice-sample check measures sample properties, not words, identity or intelligibility. ASR, waveform levels and correlation do not establish human listening quality. If a local experiment is needed, decode the actual WAV sample format, explicitly convert to the required sample rate/channels and pass an independent known speech control before accepting its source results.
