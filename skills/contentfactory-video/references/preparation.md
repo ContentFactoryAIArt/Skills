@@ -27,9 +27,23 @@ For Telegram sources, discover the operation appropriate to the chat:
   text/date/media filters. It does not read group or forum history. A group
   landing page or an empty successful dataset is not proof that its messages
   were inspected; use the messages operation for group/forum sources.
+- `telegram_post_media_download` imports visible preview media from exact public
+  post or topic URLs. Supply `input.postUrls`; no history scan limit is needed.
+  It supports photos, voice audio and videos up to 60 seconds, without claiming
+  original quality or complete albums. Preflight `research.telegramPostMedia`.
+  Submit Telegram post links only; direct file URLs and provider credentials
+  are resolved internally and are not caller inputs.
 - `telegram_media_download` imports attachments from selected message/post URLs
   into owned assets. Describe its current URL and bounded-scan contract before
   submitting. Text collection alone does not import or verify playable media.
+  A settled `FAILED` receipt may retain complete independent files in
+  `research.media` and `artifacts`; inspect `research.telegramMediaFailures`
+  before selecting footage. An incomplete album returns no partial album.
+  For a historical settled `source_media_resolution` rejection, describe
+  `content_operation_result_recover` to recover available files from the existing
+  completed source run without another provider submission or charge. Poll the
+  separate recovery receipt and preserve the original receipt and charge;
+  unavailable files remain unavailable. Never repeat the paid run automatically.
 
 Message limits bound returned rows, not complete chat or topic coverage. Preserve
 the requested source and history boundary, poll the existing paid receipt, and
