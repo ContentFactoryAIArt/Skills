@@ -1,22 +1,32 @@
 # ContentFactory Skills
 
-Connect Codex, Claude Code, or OpenCode to ContentFactory and install a shared creative-workflow skill plus seven focused specialists for assets, generation, compositions, 3D, photo editing, media processing, and research.
+Connect Codex, Claude Code, OpenCode, or Grok Build to ContentFactory and install a shared creative-workflow skill plus seven focused specialists for assets, generation, compositions, 3D, photo editing, media processing, and research.
 
-Install the agent CLI first. The installer adds one MCP endpoint and starts the agent's native sign-in in an interactive terminal. Select your projects, permissions, and spending limits during authorization. Each agent needs its own authorization.
+Install the agent CLI first. The installer adds one MCP endpoint and guides the agent's native sign-in. Select your projects, permissions, and spending limits during authorization. Each agent needs its own authorization.
 
 ## macOS and Linux
 
-Choose codex, claude, or opencode in the command:
+Choose codex, claude, opencode, or grok in the command:
 
     installer=$(mktemp) && curl -fsSL https://raw.githubusercontent.com/ContentFactoryAIArt/Skills/main/install/install.sh -o "$installer" && sh "$installer" --agent codex
 
 ## Windows PowerShell
 
-Choose codex, claude, or opencode in the command:
+Choose codex, claude, opencode, or grok in the command:
 
     $installer = Join-Path $env:TEMP 'contentfactory-install.ps1'; curl.exe -fsSL https://raw.githubusercontent.com/ContentFactoryAIArt/Skills/main/install/install.ps1 -o $installer; if ($LASTEXITCODE -eq 0) { powershell.exe -NoProfile -ExecutionPolicy Bypass -File $installer -Agent codex }
 
 Restart your agent after installation. If sign-in is not started automatically, run the login command printed by the installer. A successful configuration alone does not verify authentication; try a read-only ContentFactory request after signing in.
+
+## Grok Build
+
+Use `-Agent grok` on Windows or `--agent grok` on macOS/Linux with the commands above. Skills install to `~/.grok/skills`, or `$GROK_HOME/skills` when configured. The installer registers `https://content-factory.art/mcp` at user scope using Grok's native Streamable HTTP transport.
+
+Start `grok`, open `/mcps`, select `content-factory`, press `i`, and complete ContentFactory consent in the browser. Open `/skills`, then use `/contentfactory` with your creative request. Run `grok mcp doctor content-factory` after signing in and request a read-only project listing to verify access. Grok account sign-in is available through `grok login`.
+
+For videos on the user's PC, follow [Grok local-video intake](skills/contentfactory/references/grok.md). It covers authorized native review, runtime capability checks, and transfer into an owned ContentFactory project. The installer configures skills and MCP. Native full-video attachment syntax and limits require confirmation in the installed Grok version.
+
+Native setup follows the [Grok MCP documentation](https://docs.x.ai/build/features/mcp-servers) and [skill documentation](https://docs.x.ai/build/features/skills-plugins-marketplaces).
 
 ## Updates and safety
 

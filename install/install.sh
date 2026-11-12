@@ -20,7 +20,8 @@ case "$agent" in
   codex) root="$HOME/.agents/skills"; cli=codex ;;
   claude) root="$HOME/.claude/skills"; cli=claude ;;
   opencode) root="${XDG_CONFIG_HOME:-$HOME/.config}/opencode/skills"; cli=opencode ;;
-  *) echo 'Use --agent codex, claude or opencode.' >&2; exit 2 ;;
+  grok) root="${GROK_HOME:-$HOME/.grok}/skills"; cli=grok ;;
+  *) echo 'Use --agent codex, claude, opencode or grok.' >&2; exit 2 ;;
 esac
 command -v curl >/dev/null 2>&1 || { echo 'curl is required.' >&2; exit 1; }
 if command -v sha256sum >/dev/null 2>&1; then
@@ -95,9 +96,11 @@ check_path() {
   done
 }
 state="$HOME/.contentfactory/skills/$agent/manifest.tsv"
+if [ "$agent" = grok ]; then state="${GROK_HOME:-$HOME/.grok}/.contentfactory/manifest.tsv"; fi
 check_path "$root"
 check_path "$state"
 lockdir="$HOME/.contentfactory/locks"
+if [ "$agent" = grok ]; then lockdir="${GROK_HOME:-$HOME/.grok}/.contentfactory/locks"; fi
 check_path "$lockdir"
 mkdir -p "$lockdir"
 lock_path="$lockdir/$agent.lock"
@@ -178,6 +181,22 @@ native_login() {
     echo "To sign in, run: $*"
   fi
 }
+if [ "$agent" = grok ]; then
+  # The native list prints one "name: target" line per configured server.
+  # Check the exact name because grok mcp add updates existing entries.
+  listing=$("$cli" mcp list 2>/dev/null) || { echo 'Grok could not list connections; check grok mcp list.' >&2; exit 1; }
+  if printf '%s\n' "$listing" | awk -v name="$server:" '$1 == name {found=1} END {exit !found}'; then
+    echo "The $server connection already exists. Review it with grok mcp list."
+  else
+    "$cli" mcp add --transport http --scope user "$server" "$endpoint"
+  fi
+  echo 'Start Grok with: grok'
+  echo 'For ContentFactory authorization, open /mcps, select content-factory and press i. Complete browser consent.'
+  echo 'Open /skills to find contentfactory, then invoke /contentfactory with your request.'
+  echo 'After authorization, run grok mcp doctor content-factory and try a read-only project listing.'
+  echo 'For local video intake, follow contentfactory/references/grok.md in the installed skills.'
+  exit 0
+fi
 if [ "$agent" = opencode ]; then
   # V1 writes its add command to global config; V2 requires --global.
   help=$($cli mcp add --help 2>&1 || true)

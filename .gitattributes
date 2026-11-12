@@ -2,3 +2,5 @@
 manifest.tsv text eol=lf
 skills/**/*.md text eol=lf
 skills/**/*.yaml text eol=lf
+install/*.sh text eol=lf
+tests/*.sh text eol=lf

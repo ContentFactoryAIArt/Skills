@@ -5,7 +5,7 @@ description: Create and edit photos, videos, effects, vector artwork, audio and 
 
 # ContentFactory Creative Work (compatibility entrypoint)
 
-For a current installation, start with [contentfactory](../contentfactory/SKILL.md)
+For a current installation, start with the installed `contentfactory` skill
 and its domain specialists. This legacy standalone folder remains usable by the
 older connector; if the sibling entrypoint is absent, use the boundary below
 and this folder's references. Prefer the versioned installer for the full current

@@ -30,6 +30,8 @@ Load the relevant specialist; do not load all seven for a small revision.
 
 For a new advertisement or substantial creative rewrite, read [advertising](references/advertising.md) before choosing shots. For a timecode/scene revision, read [small edits](references/small-edits.md). Ordinary low-impact edits do not need a new research campaign, storyboard approval or full paid review.
 
+For Grok Build requests involving video on the user's PC, read [Grok local-video intake](references/grok.md). It defines the user-authorized native intake/review path and the subsequent ContentFactory transfer.
+
 ## Begin and resume with owned state
 
 Recover the selected project and existing creative task/composition before creating replacements. Keep the brief, shot purpose, source pins, episode/scene IDs, accepted choices, revisions, operation/job receipts and review limits in ContentFactory (`creative_task_save/get`, discovered live). Local filenames and version numbers are not the authoritative timeline. A rendered MP4 does not by itself provide editable layer IDs. If only a flattened local video exists, state that migration/reconstruction is needed rather than implying it is already editable server-side.

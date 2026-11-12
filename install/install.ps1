@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('codex', 'claude', 'opencode')]
+    [ValidateSet('codex', 'claude', 'opencode', 'grok')]
     [string]$Agent,
     [switch]$Check,
     [switch]$InstallOnly
@@ -15,6 +15,11 @@ switch ($Agent) {
     'codex' { $root = Join-Path $userRoot '.agents/skills' }
     'claude' { $root = Join-Path $userRoot '.claude/skills' }
     'opencode' { $root = Join-Path $userRoot '.config/opencode/skills' }
+    'grok' {
+        $grokRoot = Join-Path $userRoot '.grok'
+        if ($env:GROK_HOME) { $grokRoot = [IO.Path]::GetFullPath($env:GROK_HOME) }
+        $root = Join-Path $grokRoot 'skills'
+    }
 }
 $state = Join-Path $userRoot ".contentfactory/skills/$Agent/manifest.tsv"
 $temp = Join-Path ([IO.Path]::GetTempPath()) ('contentfactory-' + [guid]::NewGuid().ToString('N'))
@@ -23,6 +28,10 @@ $transaction = $false
 $recoveryFailed = $false
 $lockAcquired = $false
 $lockPath = Join-Path $userRoot ".contentfactory/locks/$Agent.lock"
+if ($Agent -eq 'grok') {
+    $state = Join-Path $grokRoot '.contentfactory/manifest.tsv'
+    $lockPath = Join-Path $grokRoot '.contentfactory/install.lock'
+}
 $old = $null
 $new = $null
 
@@ -168,6 +177,29 @@ try {
     Write-Host "Installed ContentFactory skills version $($new.Version) for $Agent."
     if ($InstallOnly) { return }
     if (!(Get-Command $Agent -ErrorAction SilentlyContinue)) { throw "Install $Agent, then rerun this installer to connect MCP." }
+    if ($Agent -eq 'grok') {
+        $listingText = & grok mcp list --json 2>$null | Out-String
+        if ($LASTEXITCODE -ne 0) { throw 'Grok could not list connections; check grok mcp list.' }
+        try {
+            if (!$listingText.TrimStart().StartsWith('[')) { throw 'Expected an array.' }
+            $listing = ConvertFrom-Json -InputObject $listingText -ErrorAction Stop
+            foreach ($entry in $listing) {
+                if ($null -eq $entry -or $entry.name -isnot [string]) { throw 'Missing server name.' }
+            }
+        } catch { throw 'Grok returned an unexpected connection list; check grok mcp list.' }
+        if (@($listing | Where-Object { $_.name -ceq $server }).Count -gt 0) {
+            Write-Host "The $server connection already exists. Review it with grok mcp list."
+        } else {
+            & grok mcp add --transport http --scope user $server $endpoint
+            if ($LASTEXITCODE -ne 0) { throw 'Grok could not add the server.' }
+        }
+        Write-Host 'Start Grok with: grok'
+        Write-Host 'For ContentFactory authorization, open /mcps, select content-factory and press i. Complete browser consent.'
+        Write-Host 'Open /skills to find contentfactory, then invoke /contentfactory with your request.'
+        Write-Host 'After authorization, run grok mcp doctor content-factory and try a read-only project listing.'
+        Write-Host 'For local video intake, follow contentfactory/references/grok.md in the installed skills.'
+        return
+    }
     if ($Agent -eq 'opencode') {
         $previousPreference = $ErrorActionPreference
         try {
