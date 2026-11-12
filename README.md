@@ -1,6 +1,6 @@
 # ContentFactory Skills
 
-Connect Codex, Claude Code, or OpenCode to ContentFactory and install seven focused skills for assets, generation, compositions, 3D, photo editing, media processing, and research.
+Connect Codex, Claude Code, or OpenCode to ContentFactory and install a shared creative-workflow skill plus seven focused specialists for assets, generation, compositions, 3D, photo editing, media processing, and research.
 
 Install the agent CLI first. The installer adds one MCP endpoint and starts the agent's native sign-in in an interactive terminal. Select your projects, permissions, and spending limits during authorization. Each agent needs its own authorization.
 
@@ -26,4 +26,10 @@ If an interrupted installation leaves a lock, confirm that no installer is runni
 
 The connected agent discovers the live operation schemas, supported capabilities, prices, and revisions. The operation-inventory.md file is a dated snapshot, not a substitute for live discovery. Paid operations require the appropriate authorization and budget.
 
-The older project-scoped connector and guides remain in scripts/, docs/, and skills/contentfactory-video/ for existing users. The versioned installer above installs the seven current skills at user scope.
+Start ordinary creative requests with `$contentfactory`, or describe the media task normally. Specialist descriptions also route to the shared workflow. New ads load the advertising reference; small timecode edits load only the focused revision guidance. Creative execution and durable media/project state stay in ContentFactory; unavailable operations must be reported instead of silently replaced with local scripts. A skill or AGENTS.md guides the agent, but does not enforce a runtime boundary or prove worker execution.
+
+For repeated work, create a campaign directory and copy `skills/contentfactory/assets/AGENTS.template.md` to its `AGENTS.md`. Keep only non-sensitive project locators there; brief, storyboard, assets, editable revisions and receipts belong to the ContentFactory project. A good request states the audience, desired action, source material and key language/style/budget constraints; precise corrections can name a timecode and desired behavior without technical layer IDs.
+
+See [the user guide](docs/workflow.md) for new-ad briefs, source authorization, storyboard requests, exact timecode corrections and inexpensive review examples.
+
+The older project-scoped connector and guides remain in scripts/, docs/, and skills/contentfactory-video/ for existing users. The versioned installer above installs the eight current skills and their referenced resources at user scope. The legacy standalone entrypoint remains usable, but the versioned bundle provides the current workflow and focused references.

@@ -1,13 +1,15 @@
 ---
 name: contentfactory-composition
-description: Create, edit, render and interchange ContentFactory compositions and timelines, including captions and saved creative tasks.
+description: Create or edit video and audio timelines, scenes, episodes, ads, captions and transitions, then save revisions and render through ContentFactory. Use for timestamp-specific changes to an existing video.
 ---
 
 # contentfactory composition
 
-Use the connected ContentFactory MCP server and stay within the user's selected projects and authorization. Search `operations_list` for the needed operations, following continuation anchors when present; use `operations_describe` to obtain the full input schema and current contract revision. Schema descriptions do not install new native tools. Invoke read operations with `operations_read` and effectful operations with `operations_execute`, supplying the exact revision and full arguments. If the contract changed, rediscover it before proceeding. Check the MCP error indicator and typed result status; a transport success alone does not prove the operation succeeded. Preserve native media or resource blocks when returned.
+Start with the [ContentFactory workflow](../contentfactory/SKILL.md), which defines the required MCP execution, storage, authorization and recovery boundary. Use this specialist for timeline work; do not rebuild an edit in local scripts when a render or operation fails.
 
 Read the composition and exact revision before editing. Discover capabilities, supported formats and profiles for the intended edit, preview, render or interchange. Apply edits by stable IDs and the required revision; preserve source pins and existing content outside the request. A filtered layer projection is not a complete replacement document. Before rendering with audio enabled, validate with `inspectAudioMix=true`; check both validation and the returned inspection status, since a general valid result alone does not prove mix headroom.
+
+Resolve a timestamp request to the actual clip, layer or title ID and its full interval before changing it. Removing a photo clip is not deleting one encoded frame: decide whether to fill the interval or ripple the timeline from the user's request and preserve accepted speech, audio sync and surrounding captions. Read the current revision again after another writer changes it; keep one author for mutable composition state. For a narrow revision, inspect the affected interval and its joins before expanding review. Render the saved revision through the discovered profile and verify the returned job and artifact; do not claim a heavy worker ran from an MCP transport response alone.
 
 Probe each pinned media source before adding stream references. Use the reported stream kind and original index; a silent video has no audio reference, so omit its optional `video.audio` settings. Setting `muted=true` does not make a missing audio stream valid. When several streams of the requested kind exist, select one explicitly from the probe instead of guessing an index.
 

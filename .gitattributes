@@ -1,0 +1,4 @@
+# Manifest digests describe the exact bytes served from Git, including on Windows.
+manifest.tsv text eol=lf
+skills/**/*.md text eol=lf
+skills/**/*.yaml text eol=lf

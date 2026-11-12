@@ -3,7 +3,14 @@ name: contentfactory-video
 description: Create and edit photos, videos, effects, vector artwork, audio and 3D scenes with ContentFactory. Use for photo corrections and masks, video timelines and captions, Blender animation, Telegram channel/group/forum source collection, editable project handoffs, and complete agent-made videos through ContentFactory MCP. Not for application development or general web research.
 ---
 
-# ContentFactory Creative Work
+# ContentFactory Creative Work (compatibility entrypoint)
+
+For a current installation, start with [contentfactory](../contentfactory/SKILL.md)
+and its domain specialists. This legacy standalone folder remains usable by the
+older connector; if the sibling entrypoint is absent, use the boundary below
+and this folder's references. Prefer the versioned installer for the full current
+advertising and timecode-edit workflow. Do not silently switch to local media
+tools because either installation is incomplete.
 
 ContentFactory is a free browser editor for photo, video and 3D work. The user's
 own agent can also produce complete videos through its tools. Separate free
@@ -19,13 +26,11 @@ choices for individual outputs. The instructions below apply in every language.
 
 ## Tool Boundary
 
-Use only tools whose client-provided connection metadata identifies the
-Streamable HTTP server at `https://content-factory.art/mcp`. The server exposes
-Media, Generate and Compose through one connection. Verify the actual server
-origin and endpoint from trusted client metadata; names such as
-`content-factory`, `media` or `mcp__contentfactory` are not proof of origin.
-If the client does not expose that provenance, state the missing verification
-and stop tool execution until the connection can be verified.
+Use the configured ContentFactory connection, using trusted endpoint metadata
+when exposed. The service endpoint is `https://content-factory.art/mcp` and its
+Media, Generate and Compose surfaces share projects and assets. Do not expose
+credentials, substitute an unrelated server with a similar name, or infer a
+different backend solely from opaque client labels.
 
 Use the client's normal mechanism to load this skill and its bundled references.
 All task operations, including search, import, generation, analysis, editing,
@@ -34,16 +39,20 @@ ContentFactory connection. Viewing image/audio/resource blocks returned by those
 tools in the conversation does not authorize another tool or network request.
 
 Do not call other MCP servers, web/search/image/video tools, browser automation,
-shell commands, local scripts, direct HTTP APIs, external model/provider SDKs or
-subagents for creative work. Do not run the repository's connector from this
+shell media scripts, direct HTTP APIs or external model/provider SDKs for
+creative execution. Independent research/review may be delegated within the
+same boundary; one agent owns mutable composition/task state. Local instruction
+and skill maintenance or requested reports are allowed. Do not run the repository's connector from this
 skill. The user runs setup separately. If a required operation is unavailable,
 report the limitation and continue only work supported by ContentFactory.
 Never substitute a similarly named tool from another server or local processing.
 
-Local paths are not asset IDs. Ask the user to upload a local source through
-ContentFactory and supply/select the resulting owned asset. Do not read local
-media, execute an upload helper, fetch signed tickets with another tool, or put
-media bytes in MCP JSON. Deliver ContentFactory artifact links and native
+Local paths are not asset IDs. Honor the user's privacy policy and exact upload
+authorization. Discover ContentFactory's upload capability and use its documented
+MCP client file-transfer transport when available; a prepared ticket is not a
+completed asset. If that transport is missing, explain the limitation and use
+the ContentFactory upload UI/user path. Do not execute a network upload helper,
+forward OAuth headers, or put media bytes in MCP JSON. Deliver ContentFactory artifact links and native
 resource blocks; do not claim that issuing a download ticket saved a file.
 
 ## Workflow
@@ -84,6 +93,15 @@ connection. Use exact current contracts instead of copied parameters or invented
 fallbacks. Keep provider work, storage and media processing on ContentFactory.
 Save concise task state and receipts server-side; no local journals, checkpoint
 scripts or file handoffs are required or permitted by this skill.
+
+For advertisements, recover the goal/CTA and verified source context, then
+keep a timed shot rationale: why each image is shown, what its text/voice means,
+and its provenance/quality. Let opening actions complete before cutting, preserve
+full spoken clauses, keep captions stable and away from mouths, and avoid
+repeated or meaningless still inserts. For a timecode correction, resolve the
+whole clip interval, choose fill versus ripple, and inspect the changed interval
+and joins. Do not launch a broad paid review for a tiny edit. Prefer the current
+entrypoint's advertising and small-edits references when installed.
 
 Act within the user's existing creative and spending authorization. Review
 proportionately and preserve any required checks in the focused references.

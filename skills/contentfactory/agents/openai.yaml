@@ -1,0 +1,6 @@
+interface:
+  display_name: "ContentFactory creative workflow"
+  short_description: "Create and revise media through ContentFactory"
+  default_prompt: "Use $contentfactory to create or revise my media in the selected project and retain editable state and render receipts."
+policy:
+  allow_implicit_invocation: true
