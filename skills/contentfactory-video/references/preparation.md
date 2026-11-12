@@ -14,6 +14,27 @@ supported native import path for the given URL type. YouTube
 returns metadata. Preflight paid collection, retain provenance and exact owned
 asset/file IDs, and recover its receipt. A search URL is not an imported asset.
 
+For Telegram sources, discover the operation appropriate to the chat:
+
+- `telegram_messages_collect` reads bounded oldest-first history from one public
+  group, forum or channel. Select `chat`, `maxMessages` and optional `startDate`
+  from its current schema. Preflight the equivalent
+  `research.telegramMessages` request. Read `research.telegramMessages` from the
+  completed receipt; retain message URLs/IDs and any returned `threadId`,
+  `topicName`, `replyToMessageId` and `replyQuote` so forum conversations stay
+  distinguishable. Missing topic/reply fields are unknown; do not invent them.
+- `telegram_posts_collect` reads public channel web previews with its documented
+  text/date/media filters. It does not read group or forum history. A group
+  landing page or an empty successful dataset is not proof that its messages
+  were inspected; use the messages operation for group/forum sources.
+- `telegram_media_download` imports attachments from selected message/post URLs
+  into owned assets. Describe its current URL and bounded-scan contract before
+  submitting. Text collection alone does not import or verify playable media.
+
+Message limits bound returned rows, not complete chat or topic coverage. Preserve
+the requested source and history boundary, poll the existing paid receipt, and
+report actual returned coverage and charge before increasing a scan or retrying.
+
 Keep a concise brief: audience, output language, duration, aspect ratio, factual
 claims, selected sources, creative choices and total budget. Resolve essential
 unknowns while continuing independent authorized work. Do not silently shorten

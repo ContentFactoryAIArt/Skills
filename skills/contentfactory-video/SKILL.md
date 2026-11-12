@@ -1,6 +1,6 @@
 ---
 name: contentfactory-video
-description: Create and edit photos, videos, effects, vector artwork, audio and 3D scenes with ContentFactory. Use for photo corrections and masks, video timelines and captions, Blender animation, editable project handoffs, and complete agent-made videos through ContentFactory MCP. Not for application development or general web research.
+description: Create and edit photos, videos, effects, vector artwork, audio and 3D scenes with ContentFactory. Use for photo corrections and masks, video timelines and captions, Blender animation, Telegram channel/group/forum source collection, editable project handoffs, and complete agent-made videos through ContentFactory MCP. Not for application development or general web research.
 ---
 
 # ContentFactory Creative Work
@@ -62,7 +62,8 @@ Load only the reference relevant to the next work:
 - [Editor handoff](references/editors.md): continue an existing photo, timeline
   or 3D edit and deliver editable assets alongside rendered output.
 - [Preparation and screenplay](references/preparation.md): select owned sources,
-  import supported URLs, establish the brief and write a timed scene plan.
+  collect Telegram channel/group/forum history, import supported URLs, establish
+  the brief and write a timed scene plan.
 - [Visuals and review](references/visuals.md): accepted reference frames before
   video generation, ordered continuity checks and final-video review.
 - [Audio](references/audio.md): voices, music, sound effects, exact timing and
