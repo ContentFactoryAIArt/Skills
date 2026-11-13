@@ -87,3 +87,12 @@ can run concurrently. If runtime exceeds a discovered composition limit,
 preserve total duration and story order in the fewest consecutive parts that
 fit. If one file is explicitly required, discover a native assembly path and
 report an actual limitation before changing that requirement.
+
+After inspecting actual reference frames, make a rough storyboard showing scene
+order, approximate timing, action and camera choices, plus proposed positions,
+relative scale, foreground/background, interaction paths and occlusion risks for
+important subjects and objects. Show this concrete package and viewable frames
+to the user and obtain explicit approval before generated video, paid motion
+tests or newly authored 3D/2D animation renders. Reuse the same approved package;
+material changes return the affected beat for approval. Prefer Seedance 2.5 only
+when the discovered configured route supports the references, scene and quote.

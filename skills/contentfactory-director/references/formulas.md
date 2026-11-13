@@ -4,6 +4,8 @@ These are adaptable structures, not templates to fill mechanically. The screenwr
 
 Every form below defaults to moving scenes. Stage complete actions, interactions, transformations or spatial reveals. Animate still source material through a suitable discovered video model; when that route is unsuitable or unavailable, use supported ContentFactory 3D/2D animation. Static pictures with text and audio, or pan/zoom/transitions alone, do not implement these treatments. Keep still inserts rare, purposeful and bounded; factual claims still require authentic applicable evidence.
 
+For generated moving scenes in any form, prepare/select and inspect actual reference frames first, then show a rough storyboard and proposed object/character placement to the user and obtain explicit approval before generating video or a motion prototype. This gate also covers newly authored 3D/2D animation; research and authorized reference/still preparation can proceed beforehand. Prefer a compatible configured Seedance 2.5 entry discovered live, with a supported alternative explained when necessary. See [production](production.md) for the reviewable package and approval scope.
+
 ## 1. Discovery Short: event → change → earned payoff
 
 Use when one compact action or idea can satisfy a swipe-feed viewer. Start inside an intelligible event or a relevant unusual relationship. Establish what matters, develop it and pay it off. The opening should belong to the film; an unrelated surprise followed by generic sales copy breaks the promise.

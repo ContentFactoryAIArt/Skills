@@ -16,6 +16,17 @@ sources with an appropriate discovered video model, then use supported
 ContentFactory 3D/2D animation if that route cannot work. Static-picture sequences
 with text/audio and pan/zoom alone are not a fallback.
 
+Every host must preserve the [generated-video approval gate](../../contentfactory/references/director-approval.md):
+prepare/select and inspect actual owned reference frames, then show the user a
+rough storyboard and proposed object/character placement and obtain explicit
+approval before video generation, paid motion tests or newly authored 3D/2D
+animation rendering. Reuse approval for the identical reviewed package; material
+reference/action/layout changes need approval of the affected revision. Prepare
+reviewable material within existing authority before asking. Host activation
+consent, a production budget and silence do not approve unseen staging. Prefer
+Seedance 2.5 only when current discovery and quotation establish a compatible
+configured choice; discover actual model IDs and explain an unavailable route.
+
 Every host must retain the final [Gemini quality audit](../../contentfactory/references/quality-audit.md)
 through ContentFactory: submit the whole exact final video up to and including
 three minutes (180 seconds), and continuous ordered video sections covering the
@@ -79,10 +90,13 @@ Example production prompt:
 $contentfactory-director Create the 30-second exhibition invitation in the
 selected ContentFactory project. Use the shared orchestrator, recover the
 screenwriter's meaning and general scenes first, and respect my existing spend
-limit. Develop concrete moving staging, inspect available material,
-then source or generate missing shots within that authorization. Assemble and
+limit. Develop concrete moving staging, inspect available material, prepare
+reference frames and show me a rough storyboard with proposed object placement.
+Wait for my approval of that package before generating video, then obtain the
+approved missing shots within that authorization. Assemble and
 revise the cut. Record the exact export and what you actually watched/listened to.
-Ask only for a prerequisite that blocks a correct or authorized action.
+Reuse an existing approval for the same package; ask about other prerequisites
+only when they block a correct or authorized action.
 ```
 
 For a GPT model receiving only text, provide the brief and shot plan for planning;
@@ -104,8 +118,9 @@ Example creative-recut prompt:
 /contentfactory-director Rework the selected 20-second ad: repeated presenter
 shots make it feel static. Under the shared orchestrator, recover accepted choices,
 the screenwriter's scene progression and source material before diagnosing it.
-Direct an action-led shot plan, acquire missing
-coverage through the authorized ContentFactory paths, then make the recut.
+Direct an action-led shot plan. Before new generated coverage, show inspected
+reference frames, rough storyboard and object placement for my approval.
+Acquire approved coverage through the authorized ContentFactory paths, then make the recut.
 Preserve complete purposeful actions. Report concrete repairs and review limits.
 ```
 
@@ -130,8 +145,10 @@ Example staging prompt:
 /contentfactory-director Produce the approved fictional music-led spot using
 the selected ContentFactory project and authorized budget. Follow the shared
 orchestrator and recover the screenwriter's scenes first. Design the performer's
-action, spatial progression and visual motif around the actual music. Test the
-hardest essential movement early, create missing illustrative material, then
+action, spatial progression and visual motif around the actual music. Recover or
+obtain my approval of inspected reference frames, rough storyboard and proposed
+object placement before video generation or motion tests. Then test the
+hardest essential movement early, create approved missing illustrative material, then
 assemble and review the result. Use current tool/model contracts and real receipts.
 Do not infer a successful generation or listening pass from an intention.
 ```
@@ -159,6 +176,10 @@ contentfactory-director instructions and selected references for this request.
 First distinguish creation, planning-only and narrow editing. For new productions
 or substantial creative recuts, establish the script's meaning and general scenes
 with the screenwriter, then direct moving scenes before specialist execution.
+For generated video, prepare/select and inspect reference frames, then show the
+rough storyboard and proposed object placement and obtain explicit user approval
+before video generation or newly authored animation rendering. Reuse approval
+of the same reviewed version; a host's tool approval is not storyboard approval.
 The capability packet below describes the tools actually exposed in this session.
 Execute authorized production through those tools; if a required tool is absent,
 complete the usable plan and identify the exact unavailable execution step.
@@ -177,6 +198,7 @@ Supported inputs: text / images / continuous video / audio (verified individuall
 Operation discovery and current schemas: attached tool definitions/results
 Authorized actions and spending ceiling:
 Existing assets, provenance, accepted choices and unresolved receipts:
+Inspected reference pins, storyboard/layout revision and explicit approval scope:
 Review evidence already available, with artifact identity and covered ranges:
 Unavailable capabilities:
 ```
@@ -199,13 +221,17 @@ claim that attaching this skill installed ContentFactory or generated a film.
 Gemini CLI supports `.agents/skills` aliases as well as its native roots and uses
 `activate_skill` with its own activation consent. OpenCode supports native and
 compatibility roots and loads a skill by ID. Respect those host mechanisms without
-adding approval pauses to routine work already authorized by the user.
+adding approval pauses to routine work already authorized by the user. Preserve
+the separate required user approval of concrete reference frames, storyboard and
+object placement before generated-video execution.
 
 ```text
 Use the contentfactory orchestrator for this production, screenwriter first and
 contentfactory-director second. Load the director's production reference and the
-form relevant to the script. Use the current connected ContentFactory
-capabilities to close material gaps, then assemble and inspect the result.
+form relevant to the script. Prepare/select and inspect reference frames, then
+show the rough storyboard and proposed object placement for approval before
+generated-video or animation execution. Use current connected ContentFactory
+capabilities to close approved material gaps, then assemble and inspect the result.
 Preserve the configured model and report unsupported review modalities.
 ```
 

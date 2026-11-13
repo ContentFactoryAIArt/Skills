@@ -50,7 +50,10 @@ Keep requested reporting in the conversation and server-supported task fields.
 
 Use existing task authorization, including routine corrections with known terminal
 outcomes. Stay within the total budget, counting spent, reserved and uncertain
-amounts. Do not invent per-stage approval gates. Clarify actions outside the
+amounts. Do not invent extra per-stage approval gates; preserve the explicit
+requirement to show inspected reference frames, a rough storyboard and proposed
+object placement for user approval before generated video or new 3D/2D animation.
+Reuse approval of the identical reviewed package. Clarify actions outside the
 authorized scope and preserve client approvals and server access checks.
 
 Use matching read-only preflight when exposed: `generation_preflight` for

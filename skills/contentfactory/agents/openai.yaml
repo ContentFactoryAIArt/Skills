@@ -1,6 +1,6 @@
 interface:
   display_name: "ContentFactory creative orchestrator"
   short_description: "Orchestrate scripts, direction and moving media"
-  default_prompt: "Use $contentfactory as the orchestrator: screenwriter first, director second, then production specialists for moving scenes; retain editable project state and render receipts."
+  default_prompt: "Use $contentfactory as the orchestrator: screenwriter first, then the director's inspected reference frames, rough storyboard and object placement for my approval before video generation; retain editable state and final Gemini audit receipts."
 policy:
   allow_implicit_invocation: true

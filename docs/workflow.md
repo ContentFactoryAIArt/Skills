@@ -41,7 +41,7 @@ If only audio transfer is authorized, uploading the full video container is stil
 
 ## What a useful first draft should contain
 
-The default ContentFactory orchestrator uses the screenwriter first to connect the brief and verified sources to a meaning and general scene sequence, then the director to plan filming, action, performance, camera and sound. Production specialists execute that plan. Reuse accepted scripts; this handoff is not an automatic approval pause. The storyboard should explain why each shot is present and what the viewer is meant to understand. It should not invent names, venue details, attendance or customer-work claims.
+The default ContentFactory orchestrator uses the screenwriter first to connect the brief and verified sources to a meaning and general scene sequence, then the director to plan filming, action, performance, camera and sound. For generated scenes, the director prepares and inspects actual reference frames first, then shows you a rough storyboard and proposed object placement. Video generation, including paid motion tests and new 3D/2D animation, waits for your explicit approval of that concrete package. Reuse accepted scripts and approval of identical frames/staging. The storyboard should explain why each shot is present and what the viewer is meant to understand. It should not invent names, venue details, attendance or customer-work claims.
 
 Video should primarily contain moving scenes. Still sources are animated through supported models; if that cannot deliver, the director stages supported 3D/2D animation. Static pictures with narration, text, pan/zoom or transitions are not the default fallback. Retained stills need a specific purpose, such as an intact evidence image or legible end card. A request for a photo or poster remains a still-image task.
 
@@ -53,7 +53,7 @@ You can ask for the board before rendering when you want creative control:
 После согласования собери ролик в ContentFactory.
 ```
 
-If you ask to produce the ad directly, the board is an execution aid; it is not a mandatory approval stop. Codex should preserve complete spoken thoughts, use a coherent selection of shots, choose source quality suitable for the placement, and inspect the final render. A skill improves those decisions but cannot guarantee subjective creative quality.
+Even when you ask to produce the ad directly, generated video waits for your approval of the actual reference frames, rough storyboard and proposed object placement. An initial production budget alone is not approval of an unseen package. After approval Codex proceeds through production and the final Gemini audit without repeating the same question; material changes to the affected beat are shown again. Seedance 2.5 is preferred when a live configured route supports the approved references and authorized quote; unavailable or incompatible choices are disclosed. Caption edits and technical conversions without new generated scenes do not restart storyboard approval.
 
 ## Ask for a correction by timecode and desired result
 

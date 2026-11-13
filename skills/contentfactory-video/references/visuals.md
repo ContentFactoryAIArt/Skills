@@ -16,6 +16,17 @@ mode; do not invent incompatible first/last-frame fields or claim an unsupported
 model received a reference. Reference images remain production inputs, not final
 video scenes.
 
+After inspecting the reference frames, present them to the user with a rough
+storyboard and proposed object/character placement: relative positions, depth,
+scale, facing, interactions, motion paths, camera and caption-safe space where
+relevant. Obtain explicit approval of that concrete version before generated
+video, paid motion tests or newly authored 3D/2D animation rendering. Preparing
+authorized reference stills is allowed first; a prose plan alone is not a frame.
+Reuse approval of the same version, but reapprove materially changed references,
+action or placement in the affected beat. No reply or general production budget
+is not approval. Prefer a live configured compatible Seedance 2.5 route with the
+approved references and authorized quote; do not infer source slots from its name.
+
 Discover `generation_models_list` and the selected model schema, preflight the
 exact request, then use `generation_create` or independent batch generation.
 Retain partial results and uncertain outcomes. Model-specific input restrictions

@@ -79,8 +79,35 @@ the intended action but cannot prove its performance. This is a hypothetical
 planning example, not a statement about available footage.
 
 For substantial productions, maintain a compact continuity reference and test
-the hardest essential action before making all shots. A strong still frame does
+the hardest essential action after the required user approval and before making
+all shots. A strong still frame does
 not establish reliable hand interaction, choreography or motion continuity.
+
+## Make the generated scenes reviewable before asking for approval
+
+Follow the [shared approval procedure](../../contentfactory/references/director-approval.md).
+For every generated video scene, first select or create actual owned reference
+frames, inspect them, and retain their immutable pins. Reuse suitable accepted
+references. Then make a rough storyboard from those frames with scene order,
+provisional timing, complete intended action, framing and continuity. Show
+potential object/character placement: screen position, relative scale and depth,
+gaze, paths, interactions and any caption-safe area. A labeled blocking sketch
+can make uncertain spatial relations concrete; do not require a polished animatic.
+
+Present the actual frames and storyboard/layout to the user and explicitly ask
+them to approve that version before video generation. A prose prompt, invisible
+file locator or placeholder does not make the package reviewable. The gate also
+applies to paid motion tests and newly authored 3D/2D animation rendering, so a
+fallback cannot bypass the reviewed staging. Existing authorization may permit
+research, reference-image generation and preparatory still rendering before the
+gate; it does not imply approval of unseen scenes. Pending approval is not
+consent. Continue independent authorized preparation while waiting.
+
+Recover approval already given to the same reference/storyboard/layout version.
+Record its scope and source pins in supported creative-task notes. Re-present
+only affected scenes when reference identity, action, layout or meaning changes
+materially. A narrow existing-footage edit without new moving-scene generation
+does not need this gate; the mandatory final Gemini quality audit still applies.
 
 ## Close material gaps through execution
 
@@ -108,9 +135,15 @@ Choose the route that serves the shot:
   reference assets and model capabilities suited to the shot's actual demands.
 
 For a moving scene built from still sources, discover a suitable image-to-video
-or other video model first. A generated still is an intermediate, not the finished
+or other video model first. Prefer Seedance 2.5 when the live configured catalog,
+supported reference inputs and quote make it suitable. Discover actual IDs and
+the exact model schema rather than hard-coding a provider alias, price or limit.
+If unavailable or unsuitable, explain the reason before selecting a supported
+alternative within existing authorization and reviewed staging. A generated
+still is an intermediate, not the finished
 scene: specify subject/object action, development, ending, continuity and usable
-duration, then inspect the motion output. If the model route is unavailable,
+duration, obtain the reference/storyboard approval, then generate and inspect
+the motion output. If the model route is unavailable,
 unsuitable, fails the required fidelity/action or reaches its retry/spend bound,
 author the scene through supported ContentFactory 3D or 2D animation. Use real
 object/character movement, interaction, transformation or developing diagrams.
@@ -126,7 +159,9 @@ Missing footage or a failed provider does not imply permission for a slideshow.
 If an essential moving beat has no authorized feasible route, identify that
 unresolved beat instead of silently replacing it with a static picture.
 
-Proceed with authorized acquisition after choosing the route. Inspect each result,
+Proceed with eligible authorized acquisition after choosing the route; generated
+video and newly authored animation still wait for the reviewed package's approval.
+Inspect each result,
 accept or reject it against its intended function, attach the usable owned
 reference, and update the plan. Do not stop with “we need B-roll” when you can
 search, import or generate it. Do not generate merely because generation exists:
@@ -191,8 +226,10 @@ durable context helps. Read the task before updating it and use its current
 re-read and reconcile the intended change instead of overwriting blindly.
 
 The contract inspected for this reference stores `brief` and `reviewNotes` as
-**strings**. Put the screenwriter handoff, treatment, shot-card detail, motion
-routes, still exceptions, gap ledger and review evidence in those supported text
+**strings**. Put the screenwriter handoff, inspected reference pins, rough
+storyboard/object placement, explicit user approval and its reviewed revision,
+treatment, shot-card detail, motion routes, still exceptions, gap ledger and review
+evidence in those supported text
 fields as appropriate. `scenes` is a typed array of composition scenes, not
 arbitrary shot-card objects: current fields include
 `sceneId`, `name`, `thesis`, `intervalFrames` and the documented layer-ID lists.

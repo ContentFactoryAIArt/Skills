@@ -69,6 +69,23 @@ visible action, performance, camera, sound and acquisition tasks. Keep the roles
 distinct even when one agent performs both. A narrow correction or standalone
 photo/audio/3D request does not require a new screenplay or production campaign.
 
+Before generated video, the director prepares/selects and inspects actual owned
+reference frames, then presents a rough storyboard and proposed object/character
+placement to the user for explicit approval. Show viewable frames and concrete
+scene order, approximate timing, action, camera and spatial layout; prompts alone
+are not reference frames. Wait for that package's approval before video jobs,
+paid motion tests or newly authored 3D/2D animation rendering. Authorized research
+and preparatory reference stills can proceed first. Reuse explicit approval of
+the identical reviewed version; material changes need approval of the affected
+beat. A general budget or silence is not approval of unseen scenes. Narrow edits
+without new generated footage do not restart this gate.
+
+Prefer Seedance 2.5 when live model discovery exposes a configured, compatible,
+priced route supporting the approved reference conditioning and budget. Discover
+the actual model/provider and current model contract; a familiar name is not
+proof of image-input support. Explain necessary alternatives rather than silently
+switching models or generating text-only video without the approved references.
+
 For moving-picture work, purposeful movement is the default. Do not assemble
 static pictures with text and narration as the normal production strategy.
 Static holds need a specific creative reason; a predominantly static treatment

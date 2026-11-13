@@ -50,6 +50,14 @@ Measure actual durations and adjust the edit without duplicating speech or
 cutting words. Use typed ContentFactory Blender operations for supported 3D/2D
 work. Standalone static outputs and narrow edits keep their requested scope.
 
+Before generated video or new 3D/2D animation, show the actual inspected reference
+frames, a rough storyboard and proposed object placement to the user and wait
+for explicit approval of that package. This includes paid motion tests. Prepare
+authorized stills first, reuse identical accepted packages and reapprove material
+changes to affected scenes. Prefer Seedance 2.5 only through a discovered live,
+configured, compatible and priced model contract. A general budget, model name
+or silence does not establish approval or reference-input support.
+
 ## Retries, Review and Delivery
 
 Persist operation identity and receipts promptly. A timeout does not prove an

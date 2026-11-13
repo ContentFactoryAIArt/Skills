@@ -20,6 +20,8 @@ Maintain a concise source map with ContentFactory asset IDs/pins, provenance, ac
 
 Compare available coverage with the staging plan. Proactively search, import or generate missing material through the relevant ContentFactory specialists within existing authorization and budget; do not wait for the user to request each shot. Track each gap's purpose, acquisition route and result. When rights, access or spending authority blocks a particular asset, continue independent work and use a truthful alternative or report that specific limitation.
 
+For new generated moving scenes, first prepare and inspect the actual reference frames, then show the rough storyboard and proposed object placement for the user's [approval](director-approval.md). Do not submit generated video, paid motion tests or new 3D/2D animation renders before that concrete package is approved. Research and authorized reference/still preparation may proceed. Reuse identical approved choices and reapprove material changes to affected beats. Prefer Seedance 2.5 when its discovered configured route supports the approved references and authorized quote.
+
 ## Make every beat earn its place
 
 Use a compact board with these fields, keeping it in the project's creative task or another supported project record:
