@@ -60,7 +60,9 @@ abilities. Discovery, permission, pricing, admission and completed execution are
 different facts. Do not pay merely to discover whether a route works.
 
 Perform the screenwriter role first: establish the meaning, intended viewer
-response, story beats and general scenes, using stable scene IDs. Then perform
+response, story beats and general scenes, using stable planning labels. Reuse
+actual server scene IDs only when recovered from the project; do not invent IDs
+for a draft screenplay. Then perform
 the director role: turn those scenes into observable action, performance,
 filming, camera, sound and acquisition choices. Reuse the installed specialist
 handoffs when available. Keep spoken text separate from stage direction and
