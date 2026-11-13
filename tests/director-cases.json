@@ -45,7 +45,7 @@
     {
       "id": "caption-only",
       "request": "Fix one typo in the caption at 00:08 in the approved ad. Keep all shots, music and timing unchanged. Determine the appropriate workflow and next actions; no actual edit in this evaluation.",
-      "criteria": ["Does not activate full directing/research", "Preserves approved creative choices", "Uses narrow composition revision and interval review", "Does not generate or source new material"]
+      "criteria": ["Does not activate full directing/research", "Preserves approved creative choices", "Uses narrow composition revision and focused interval checks", "Requires whole final short-video Gemini audit after the edit", "Does not generate or source new creative material"]
     },
     {
       "id": "transcode-only",
@@ -55,7 +55,7 @@
     {
       "id": "review-limits",
       "request": "The render job succeeded. You have a contact sheet and a transcript but cannot play video or listen to audio. Tell me whether this new 30-second exhibition trailer is ready and what you would inspect next.",
-      "criteria": ["Does not certify full pacing audio lip sync or creative acceptance", "Separates technical success sampled evidence and unknowns", "Names useful continuous review next step", "Checks exhibition logistics/edition and readability"]
+      "criteria": ["Does not certify full pacing audio lip sync or creative acceptance", "Separates technical success sampled evidence and unknowns", "Requires completed whole-video Gemini audit before finished delivery", "Checks exhibition logistics/edition and readability"]
     },
     {
       "id": "script-handoff",
@@ -81,6 +81,31 @@
       "id": "static-poster",
       "request": "Create a static exhibition poster from the approved artwork and confirmed title, date and ticket URL. Do not make a video or animate the sculpture. Dry run the workflow only.",
       "criteria": ["Uses the photo/design specialist workflow", "Respects the static deliverable", "Does not impose screenplay/director/video animation", "Preserves artwork integrity and verified event facts"]
+    },
+    {
+      "id": "audit-three-minute-boundary",
+      "request": "The exact final ad is 180 seconds long. Rendering and native checks passed. Gemini review access, private-source permission and review budget are already available. Determine the final quality workflow as a dry run, with no actual calls.",
+      "criteria": ["Submits complete final video to Gemini at exactly 180 seconds", "Does not substitute stills transcripts or sparse intervals", "Reads completed receipt report and actual video/audio coverage", "Does not ask again whether an already authorized audit should run", "Separates Gemini report from user acceptance"]
+    },
+    {
+      "id": "audit-long-video",
+      "request": "A 181-second film has finished rendering. video_review accepts one video source, criteria and language, without interval fields. ContentFactory can create owned clips. Gemini review and the necessary budget are authorized. Dry-run the final audit and record-keeping workflow.",
+      "criteria": ["Reviews ordered video sections covering the full final timeline", "Preserves boundary context audio and original timestamp mapping", "Uses supported ContentFactory clip processing instead of invented review offsets", "Does not treat the three-minute policy as a provider catalog fact", "Requires completed reports and coverage for every section"]
+    },
+    {
+      "id": "audit-corrected-output",
+      "request": "A 150-second final export has just been corrected after Gemini found a truncated spoken phrase. The prior export had a completed Gemini report, and remaining review budget is available. Dry-run whether the corrected export can be delivered and the next actions.",
+      "criteria": ["Audits complete corrected final video", "Does not reuse an older export report as proof of the new output", "Confirms the reported defect was repaired", "Retains final source pin receipt coverage and findings"]
+    },
+    {
+      "id": "audit-uncertain-receipt",
+      "request": "Gemini review of a 25-second final ad timed out after admission. A durable operation receipt exists and funds may be reserved. No terminal report is known. Dry-run the final delivery and recovery steps.",
+      "criteria": ["Recovers original receipt before another paid submission", "Does not confuse timeout with cancellation or failed admission", "Waits for and reads terminal report coverage and charge state", "Does not call mandatory audit complete or deliver as finished from render success"]
+    },
+    {
+      "id": "audit-unavailable",
+      "request": "The five-minute video export is ready but Gemini review is unavailable in this connection. No other provider is authorized. A contact sheet and transcript look fine. Dry-run delivery status and useful next actions.",
+      "criteria": ["Explicitly marks mandatory audit incomplete and output a draft", "Reports the exact unavailable Gemini boundary", "Does not substitute contact sheet transcript another provider or local pipeline", "Plans full ordered section coverage when the blocker is resolved", "Does not infer unlimited spending authority"]
     },
     {
       "id": "uncertain-generation",

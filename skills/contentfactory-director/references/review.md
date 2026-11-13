@@ -13,7 +13,7 @@ Use this for a treatment, rough cut, final export or creative complaint. The sta
 | Continuous playback/listening of exact export | Observed motion, joins, performance, sound and sequence-level rhythm under those conditions | Audience approval, conversion lift, every device's behavior |
 | Audience/campaign evidence | Observed responses in the sampled setting | Universal effectiveness or a causal claim without a suitable comparison |
 
-Record what artifact/revision and ranges were actually inspected, how, and what remains unknown. Do not turn unavailable playback into a passing result. Reuse valid unchanged evidence; a small caption fix need not trigger a new full paid soundtrack review.
+Record what artifact/revision and ranges were actually inspected, how, and what remains unknown. Do not turn unavailable playback into a passing result. Reuse valid unchanged evidence for diagnostics, but every revised final video still requires the [mandatory Gemini audit](../../contentfactory/references/quality-audit.md); a small caption fix does not waive it.
 
 ## Diagnose before prescribing
 
@@ -37,6 +37,16 @@ Make notes as **moment → observed problem → intended effect → concrete cha
 
 **Exact final export:** watch and listen through the sequence when supported, then inspect specific joins, captions, subject fidelity, interruptions and technical defects. Confirm the planned visible actions actually develop; a successful render, animated text, soundtrack or drift across a still cannot pass motion acceptance. Check each still insert against its recorded purpose and interval; a narrated slideshow needs an explicit user request. A muted pass can test visual comprehension for relevant placements; an audio-only pass can reveal sonic structure. Neither replaces the combined experience. Check the actual target framing and reading size, not just a large desktop preview.
 
+## Always finish with Gemini quality audit
+
+Use the [shared procedure](../../contentfactory/references/quality-audit.md) for every delivered final video, including narrow edits and technical delivery exports. At most three minutes (180 seconds): submit the whole exact final video. Longer: submit continuous ordered sections covering the complete final timeline, with context around joins and a mapping back to original timestamps. A set of stills, a contact sheet, a transcript or sparse clip sampling is not this audit.
+
+Discover the current ContentFactory review contract and confirm the actual reviewer is Gemini; a server-selected model must be checked rather than replaced by an invented model ID. Ask for quality findings with timestamps and concrete repairs across meaningful motion, completed action, continuity, image defects, captions/readability, speech and lip sync where present, music/effects and mix. Preserve intended silence; absence of audio is not an audio defect. A submitted or queued request is not a completed audit: recover the receipt, read the report, and check actual visual/audio coverage and limitations.
+
+Resolve material findings against the artifact and the brief, make bounded repairs, and audit the new exact final output. Videos at most 180 seconds receive whole-video review again; longer outputs need complete section coverage of that current final artifact. Reuse completed section reports only for the same exact immutable artifact and ranges, never an earlier export. Retain final source identity, section ranges/offsets, Gemini identity, receipts, findings, decisions, costs and remaining limitations in the creative task.
+
+Plan the required review within existing privacy and spending authorization. If the connection, model, source access, media limits or budget cannot support it, keep the audit explicitly incomplete and identify the blocked step. Do not substitute another provider, overspend, silently reduce coverage or call the video quality checked. Model feedback supports the audit; it does not establish user acceptance or campaign effectiveness.
+
 ## Judging a plan without pretending it is a finished film
 
 Use anchored judgments per dimension: **missing/contradictory**, **generic or incomplete**, **specific and executable**, or **demonstrated in the artifact**. Only the final category requires observed media. Do not average away a false claim, unavailable essential shot, missing authorization or unreviewed output.
@@ -56,6 +66,6 @@ For an independent review, provide the request, relevant raw material, plan/cut 
 
 ## Stop conditions and handoff
 
-Finish when the requested deliverable exists, relevant defects are addressed, the required technical checks and available creative review have been performed, and limitations are stated. If a required capability/authorization is missing, deliver the useful completed portion with the exact unresolved action. Never call a draft accepted just because a score crossed a threshold.
+Finish when the requested deliverable exists, relevant defects are addressed, required technical checks and the mandatory Gemini audit of the final video are complete, and limitations are stated. A plan-only deliverable needs no nonexistent-video audit. If a required capability/authorization is missing, deliver the useful completed portion as a draft with the exact unresolved action and incomplete audit status. Never call a draft accepted just because a score crossed a threshold.
 
 For a new paid attempt, specify what will change and why it could fix the observed failure. Reconcile an uncertain earlier receipt before resubmitting. If the same cause remains or the budget is exhausted, change the route or report the specific blocker. Do not spend indefinitely to chase an undefined ideal.

@@ -16,6 +16,13 @@ sources with an appropriate discovered video model, then use supported
 ContentFactory 3D/2D animation if that route cannot work. Static-picture sequences
 with text/audio and pan/zoom alone are not a fallback.
 
+Every host must retain the final [Gemini quality audit](../../contentfactory/references/quality-audit.md)
+through ContentFactory: submit the whole exact final video up to and including
+three minutes (180 seconds), and continuous ordered video sections covering the
+whole timeline for longer outputs. Host playback or a different model's opinion
+does not replace it. Confirm the actual Gemini reviewer and completed report;
+respect existing privacy/spending limits and label a blocked audit incomplete.
+
 ## Install the complete folder safely
 
 The source is `skills/contentfactory-director` in

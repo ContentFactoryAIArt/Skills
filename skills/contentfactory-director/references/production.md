@@ -232,6 +232,17 @@ viewing from contact sheets, audio-stream metadata, transcripts or job success.
 If a necessary modality is unavailable, name the remaining acceptance check and
 retain that limitation in saved notes and delivery.
 
+Always submit the final video to Gemini through ContentFactory for the
+[required quality audit](../../contentfactory/references/quality-audit.md): send
+the whole exact export at durations up to and including 180 seconds; for longer
+videos send ordered sections covering the complete timeline, retaining context
+around joins and source-time offsets. This applies after a narrow correction
+too. Read completed receipts and timed reports, confirm actual video/audio
+coverage, and repair material findings before auditing the resulting final
+artifact. Prior-export reports, still samples and successful rendering do not
+fulfill the final audit. Reserve the required review within existing permission
+and budget; if blocked, report it incomplete instead of calling the video done.
+
 Give each repair a concrete location, observed defect, intended effect and changed
 decision. Work within remaining authorized time/spend and tool limits. Stop an
 iteration path when it lacks a justified change, repeats the same defect, exhausts

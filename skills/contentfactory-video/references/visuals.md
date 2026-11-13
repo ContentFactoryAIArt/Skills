@@ -60,24 +60,49 @@ model review ran. If a needed check is blocked by access, compatibility, pricing
 or authorization, report that check as incomplete.
 Still-frame analysis cannot establish final-video motion or choreography.
 
-## Final Video
+## Mandatory Final Gemini Quality Audit
 
-For a new production or substantial recut, review the exact complete owned final
-render in motion and listen where supported. Use ContentFactory `video_review`
-when model-assisted review answers an unresolved question within the existing
-authorized budget; do not buy a full paid review for a small caption/timecode
-correction by habit. Discover its exact contract, source shape, pricing controls
-and server-selected model. Use a unique idempotency key and the exact final
-asset/file. Do not purchase review beyond authorized spend or silently change
-providers.
+Always submit every final video, including a revised export after a narrow
+correction, to Gemini through ContentFactory before reporting it finished.
+For a duration up to and including three minutes (180 seconds), submit the whole
+exact final video. For longer outputs, submit continuous ordered video sections
+covering the entire final timeline, with context around joins and a record of
+each section's original timestamp offset. Do not replace video sections with
+stills, contact sheets, transcripts or sparse samples.
 
-Ask about requested actions, choreography, transitions, character/prop continuity
-and audio. Poll the receipt and read timed findings, coverage and limitations.
-Check material findings against the actual render. Inspect the intended actions
-for unintended freezes or replacement by static layouts. A changed final render
-needs its affected review repeated. Disclose actual review coverage and
-unavailable continuous motion/audio or model review explicitly; stills, a
-successful render and `video_analyze` are not the same evidence.
+Discover ContentFactory `video_review` and its current contract, source shape,
+pricing controls and actual server-selected model; confirm the reviewer is
+Gemini without inventing a model ID. The three-minute rule selects review
+coverage, not an assumed API size/duration limit. Discover actual media limits
+and supported server-side range/clip preparation. If the contract cannot accept
+ranges, prepare owned clips through supported ContentFactory operations; do not
+invent trim fields or use local processing. Keep exact final asset/file pins,
+section identities and offsets. A short video that cannot be submitted whole
+has an incomplete audit until the specific transfer/capability blocker is solved.
+
+Ask for timed quality findings and concrete repairs covering intended motion and
+complete actions, continuity and geometry, image artifacts, captions/readability,
+speech and lip sync when present, sound/music and mix. Preserve intended silence.
+Include the brief, accepted choices and intended static exceptions so the review
+judges the actual assignment without prescribing a favorable verdict. Poll the
+durable receipt and read the completed report, actual video/audio coverage and
+limitations; submission alone is not an audit. Map section-local findings back
+to the final video's timestamps and verify material findings against the render.
+
+Fix material defects within the authorized scope and audit the resulting exact
+final artifact: whole-video review again for outputs at most 180 seconds, or
+complete section coverage for longer outputs. Reuse reports only for the same
+exact immutable final artifact and ranges, never a different export. Save source
+identity, Gemini identity, section coverage, report/receipt IDs, findings and
+disposition, settled cost and remaining limitations in the creative task.
+
+Plan the audit within existing privacy permission and authorized review budget;
+do not silently switch providers, exceed spending or shrink coverage. If access,
+capability, pricing, media limits or authorization prevents the required audit,
+report the exact blocked step and keep quality audit status incomplete. A rendered
+draft can be shared with that status; do not call it finished or Gemini approved.
+Native validation and actual playback/listening remain useful separate evidence;
+neither replaces the Gemini audit, and Gemini feedback is not user acceptance.
 
 For rejected analysis, retain safe diagnostic stage/reason, receipt and charge
 state. Preparation failure precedes inference; submission failures can indicate

@@ -60,12 +60,18 @@ operation key, while a task-state write failure is not a reason to regenerate.
 Check continuity across scenes, including palette, motion, title placement and
 object state. Use native audio validation and report which checks actually ran;
 structural validation alone does not prove that all audio was decoded and heard.
-Review the exact final video in motion and listen where supported. Use
-ContentFactory `images_analyze` for reference frames or native `video_review`
-when model review answers a specific unresolved question within the existing
-authorization and budget; do not buy full review for every small edit. These
-are ContentFactory operations, not permission to call a provider directly. If a
-required check is unavailable, state what was and was not reviewed.
+Review the exact final video in motion and listen where supported. Always
+complete the final Gemini quality audit through ContentFactory `video_review`,
+including after a small edit: submit the whole final video at durations up to
+and including 180 seconds, or ordered video sections covering the entire longer
+timeline with boundary context and original offsets. Follow `visuals.md` for
+contract/model discovery, actual media limits, receipt/report completion,
+coverage and findings, repairs and re-audit of the resulting final artifact.
+Use `images_analyze` for useful reference-frame review; stills cannot replace
+the final video audit. These are ContentFactory operations, not permission to
+call a provider directly. Preserve privacy and authorized spend. If the Gemini
+audit is blocked, state the missing prerequisite and incomplete audit status;
+do not silently skip it or call the video finished.
 
 For reference adaptations, distinguish observed timed actions from model
 inferences and from the audio actually heard. Still frames cannot establish

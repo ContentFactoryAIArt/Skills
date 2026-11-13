@@ -100,8 +100,8 @@ Load only the reference relevant to the next work:
   collect Telegram channel/group/forum history, import supported URLs, establish
   the brief and write a timed scene plan.
 - [Visuals and review](references/visuals.md): inspected reference frames before
-  video generation, supported conditioning, continuity checks and proportionate
-  final-video review.
+  video generation, supported conditioning, continuity checks and the mandatory
+  final Gemini quality audit.
 - [Audio](references/audio.md): voices, music, sound effects, exact timing and
   honest listening coverage.
 - [Composition](references/compose.md): native timeline edits, scene continuity,
@@ -127,11 +127,20 @@ and its provenance/quality. Let opening actions complete before cutting, preserv
 full spoken clauses, keep captions stable and away from mouths, and avoid
 repeated or meaningless still inserts. For a timecode correction, resolve the
 whole clip interval, choose fill versus ripple, and inspect the changed interval
-and joins. Do not launch a broad paid review for a tiny edit. Prefer the current
+and joins. Keep editing narrow, then perform the final Gemini audit even after
+a tiny edit. Prefer the current
 entrypoint's advertising and small-edits references when installed.
 
-Act within the user's existing creative and spending authorization. Review
-proportionately and preserve any required checks in the focused references.
-Paid review still needs an authorized budget; report an unavailable check without
-claiming it passed. Deliver the actual rendered artifact with material remaining
+Every final video requires a completed Gemini quality audit through ContentFactory.
+Send the whole exact final video when its duration is at most three minutes
+(180 seconds); for longer videos send continuous ordered sections covering the
+complete timeline with boundary context. Read the actual completed report,
+timed findings and visual/audio coverage, fix material defects and audit the new
+final artifact. See [visuals](references/visuals.md) for the standalone procedure.
+Frames, transcripts and successful exports do not replace this audit.
+
+Act within the user's existing creative, privacy and spending authorization.
+Paid review still needs an authorized budget; if the required Gemini audit is
+blocked, report it incomplete with the exact prerequisite instead of skipping it
+or calling the video finished. Deliver the actual rendered artifact with material remaining
 limitations, review coverage and cost, distinguishing completion from admission.

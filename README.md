@@ -42,6 +42,6 @@ Invoke the screenwriter explicitly with `$contentfactory-screenwriter` in Codex 
 
 For repeated work, create a campaign directory and copy `skills/contentfactory/assets/AGENTS.template.md` to its `AGENTS.md`. Keep only non-sensitive project locators there; brief, storyboard, assets, editable revisions and receipts belong to the ContentFactory project. A good request states the audience, desired action, source material and key language/style/budget constraints; precise corrections can name a timecode and desired behavior without technical layer IDs.
 
-See [the user guide](docs/workflow.md) for new-ad briefs, source authorization, storyboard requests, exact timecode corrections and inexpensive review examples.
+Every final or revised video ends with a Gemini quality audit through ContentFactory: complete video up to and including three minutes, or ordered video sections covering the whole export when longer. Material defects are corrected and the final output audited again; a blocked audit is reported as incomplete. See [the user guide](docs/workflow.md) for briefs, source authorization, storyboard requests, corrections and review.
 
 The older project-scoped connector and guides remain in scripts/, docs/, and skills/contentfactory-video/ for existing users. The versioned installer above installs the ten current skills and their referenced resources at user scope. The legacy standalone entrypoint remains usable, but the versioned bundle provides the current workflow and focused references.

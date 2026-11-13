@@ -8,7 +8,7 @@ Read this for a new advertisement, a substantial advertising recut, or a correct
 - **Substantial recut:** read the existing brief, composition revision and earlier feedback; change the affected story beats and preserve accepted choices.
 - **Timecode edit:** identify the actual clip/layer and surrounding boundaries at the saved revision. Make the smallest meaningful edit, render, and inspect that interval plus the final export's technical result. Reuse unchanged audio evidence when an actual comparison supports it.
 
-Do not turn every correction into new research, generation, a large contact sheet, or another paid model review. Do not make the user restate known project decisions.
+Do not turn every correction into new research, generation or a large contact sheet. Keep the edit narrow while still completing the mandatory final Gemini audit. Do not make the user restate known project decisions.
 
 ## Brief and evidence before selection
 
@@ -56,7 +56,7 @@ Use ContentFactory validation and the applicable domain instructions before rend
 
 For a small visual edit, inspect a few points around the changed interval, including its joins and caption entry/exit. For a new ad or substantial recut, review the story as a sequence as well as representative technical samples. Match the review method to the issue: stills can reveal text placement, but continuous playback is needed to judge pacing and many motion problems. Say when playback/listening or device-size readability was not available.
 
-Request a paid visual/audio analysis only when it answers a specific unresolved question that the available evidence cannot answer, within authorization and the agreed cost scope. Keep existing receipts; reconcile uncertain results before retrying. Honor requests for direct user review. Do not upload private visuals merely because an audio-only review was authorized.
+Always complete the [Gemini quality audit](quality-audit.md) on the exact final or revised ad: submit it whole when <=180 seconds, otherwise ordered video sections covering the whole timeline with boundary context. Read completed reports and coverage, resolve material findings and audit the corrected final output. Focused checks, direct user review and still samples do not replace this requirement. Keep existing receipts; reconcile uncertain results before retrying. Preserve authorized spending and privacy scope, and report a blocked audit as incomplete. Do not upload private visuals merely because an audio-only review was authorized.
 
 Treat review and production budgets separately. A $0 review allowance does not authorize paid music generation or define a total production ceiling. Check actual charging effects; "native" alone does not mean an operation is free.
 

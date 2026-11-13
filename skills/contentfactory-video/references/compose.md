@@ -61,8 +61,16 @@ is unsupported. For actual render failures, use `render-failures.md`.
 Render the saved immutable revision with `composition_render` and follow its
 existing job through native wait/batch reads. Verify the exact exported artifact's
 duration, format and relevant opening/ending or transitions. Complete generated
-scene-frame/final-video checks from `visuals.md`, reference comparisons from
+scene-frame checks and the mandatory final Gemini quality audit from `visuals.md`, reference comparisons from
 `reference-video.md` and listening coverage from `audio.md` as applicable.
+
+The final video audit applies after narrow edits too: submit the complete exact
+export at durations up to and including 180 seconds; for longer videos submit
+continuous ordered sections covering the whole timeline with boundary context.
+Inspect completed Gemini reports and visual/audio coverage, resolve material
+findings and audit the resulting final artifact. Earlier-export checks cannot
+pass a new export. If capability, privacy or authorized review budget blocks it,
+retain incomplete audit status instead of silently delivering it as finished.
 
 Save revision, job, output ordinal, owned asset/file, digest, receipts, actual
 cost and review limitations in the creative task. Preview evidence belongs to

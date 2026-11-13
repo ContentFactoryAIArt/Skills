@@ -12,7 +12,7 @@ For an advertisement, useful detail includes:
 - Who should respond and where the ad will appear: for example, installers watching a vertical Telegram video.
 - Which supplied material matters: an existing ContentFactory project/asset ID, a public source, or local files you authorize for import. Say which sources must be used or avoided.
 - Style constraints: language, approximate duration, pace, examples you like, and concrete dislikes such as bulky captions or repetitive speaker angles.
-- Review and spending preferences: whether you want to judge the preview yourself, which problem warrants paid analysis, and any budget limit.
+- Review and spending constraints: whether you want to judge a preview yourself, the budget for the mandatory final Gemini audit, and any additional analysis limits.
 
 For example:
 
@@ -23,8 +23,8 @@ $contentfactory
 Используй проект <project-id> и приглашения <asset-ids>; контекст бери из
 <ссылка на публичную группу>. Надписи на русском. Живой темп, разные люди и действия,
 без повторов одного спикера. В начале законченное движение, а не обрывок.
-Речь не обрывай, текстом рот не закрывай. Черновик покажи мне;
-платное визуальное ревью пока не нужно.
+Речь не обрывай, текстом рот не закрывай. Финальную версию отправь
+в Gemini на аудит качества, затем покажи мне ролик и итог проверки.
 ```
 
 This example uses an already authorized project and assets. For local private files, add a concrete import scope if you want them transferred:
@@ -93,18 +93,21 @@ An `AGENTS.md` helps Codex choose the right workflow. It is not a runtime securi
 
 For Codex, the template is `~/.agents/skills/contentfactory/assets/AGENTS.template.md` (Windows: `%USERPROFILE%\.agents\skills\contentfactory\assets\AGENTS.template.md`). Other clients use their installed skills root. Copy it into a dedicated campaign directory as `AGENTS.md` and open that directory in the agent. Leave unknown project IDs blank until live discovery. Restart/reload skill discovery after installation; a workspace can also explicitly instruct the agent to read the installed entrypoint when the catalog is stale.
 
-## Review without unnecessary cost
+## Mandatory final Gemini quality audit
 
-For a tiny correction, request a check of the changed interval and its joins. For a new edit, ask to see the complete sequence. Paid model analysis should answer a named unresolved question; it need not run after every caption change. For example:
+Every final or revised video must be sent to Gemini through ContentFactory for a quality audit. If it is up to and including three minutes long, submit the complete video. For longer videos, submit ordered video sections covering the whole export, retaining context around joins. This applies after small caption edits too; focused checks of the changed interval supplement the final audit.
 
-Keep review and production budgets separate: a $0 review ceiling forbids paid review but does not authorize a new music-generation charge or set the whole campaign budget. Codex should check actual quotes/effects rather than assume a native operation is free.
+Plan the required review cost early and keep review and production budgets separate. A $0 review ceiling forbids paid review and leaves the mandatory audit incomplete unless an authorized no-charge route exists. Codex should check actual quotes/effects rather than assume an operation is free, reuse existing authorization, and state the exact blocker when access, privacy scope or spend prevents the audit.
 
 ```text
-Покажи готовый ролик мне. Проверь технически экспорт и только изменённый
-участок. Не делай большой контактный лист и платное ревью без конкретной
-необходимости; если оно потребуется, объясни, какой вопрос оно решит.
+После финального рендера отправь видео в Gemini на аудит качества через
+ContentFactory: до трёх минут включительно целиком, более длинное — частями
+с покрытием всего ролика и контекстом склеек. Исправь существенные замечания
+и проверь исправленный результат. Покажи мне ролик и краткий итог аудита.
 ```
 
-Expect a concise delivery: exact output, what changed, what was checked, and any material limitation. Sampled frames prove selected visual properties, not continuous pacing or listening quality. A matching audio comparison supports unchanged sound content; it does not establish lip sync. Confirmed receipt charges support cost reporting; reservations, guesses and Codex token use are not the same as settled operation cost.
+Read the completed Gemini report and its video/audio coverage, address material defects and audit the corrected final export. Keep the output revision, section time map, receipts, findings and limitations in the ContentFactory task. A queued request, contact sheet or transcript does not complete the audit. Model-reported full coverage is not a guarantee of frame-by-frame inspection or the user's creative acceptance.
+
+Expect a concise delivery: exact output, what changed, the Gemini audit outcome and any unresolved limitation. Confirmed receipt charges support cost reporting; reservations, guesses and Codex token use are not the same as settled operation cost.
 
 You can simply say “continue in the same project.” The assistant is responsible for reading the instructions, retaining accepted choices, challenging its own shot choices and using the authorized platform workflow.

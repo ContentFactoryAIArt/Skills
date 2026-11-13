@@ -53,7 +53,7 @@ Load only the relevant specialists. Reuse already-loaded role instructions and h
 | Deterministic photo corrections, masks or layered photo documents | [photo](../contentfactory-photo/SKILL.md) |
 | Author, animate, simulate or render 3D/2D scenes with supported capabilities | [3D](../contentfactory-3d/SKILL.md) |
 
-For new productions or substantial creative recuts, complete the screenwriter-to-director handoff before assembly, then proactively obtain missing moving coverage within existing authorization and budget. For advertising, also read [advertising](references/advertising.md) for evidence and edit safeguards. For a timecode/scene revision, read [small edits](references/small-edits.md). Ordinary low-impact edits do not need a new research campaign, storyboard approval or full paid review.
+For new productions or substantial creative recuts, complete the screenwriter-to-director handoff before assembly, then proactively obtain missing moving coverage within existing authorization and budget. For advertising, also read [advertising](references/advertising.md) for evidence and edit safeguards. For a timecode/scene revision, read [small edits](references/small-edits.md). Ordinary low-impact edits do not need a new research campaign or storyboard approval; their final video still requires the Gemini audit below.
 
 For Grok Build requests involving video on the user's PC, read [Grok local-video intake](references/grok.md). It defines the user-authorized native intake/review path and the subsequent ContentFactory transfer.
 
@@ -63,10 +63,12 @@ Recover the selected project and existing creative task/composition before creat
 
 Before a mutation, establish which project, saved revision, target interval/layer and live operation will carry it. For generation, confirm the source/model controls and authorized price. For rendering, discover the supported profile/worker capabilities; do not claim a particular heavy worker ran unless the receipt proves it. Read [execution](references/execution.md) when submitting, transferring or recovering work.
 
-## Review proportionately and deliver evidence
+## Always audit the final video with Gemini
 
 Challenge the choice at planning, after the changed interval, and before delivery: does this fulfill the user's actual request; why is this shot here; what evidence would disprove the quality claim? Resolve concrete defects, not hypothetical ones. Preserve earlier accepted corrections.
 
-Use native validation first, then a small set of relevant artifact frames/intervals. A still does not prove motion or lip sync; an audio hash does not prove intelligibility. Check decoded timestamp/PTS rather than assuming a seek plus playback lands at the requested frame. Do not re-run paid full-video analysis for an unchanged soundtrack or a small caption edit. Use paid review only within existing authorization and when it answers an unresolved question. Offer the rendered result for the user's visual judgment without calling it creatively accepted.
+Use native validation and focused inspection of the returned artifact first. Before completing any final or revised video, including a small caption edit or technical conversion, send the actual final video to **Gemini through ContentFactory for a quality audit**. For duration **up to and including 180 seconds, submit the complete video**; for longer videos, submit ordered video sections covering the entire export, including context across joins. Stills, transcripts and the agent's own review do not replace this step. Read [quality audit](references/quality-audit.md) for submission, coverage, repair and receipt requirements. A plan-only or standalone still request has no final video to audit.
+
+Include the required audit in the production/review budget from the start and reuse existing authorization without asking again whether to audit. Respect explicit source privacy and spending ceilings. If Gemini, a supported whole-video/section transfer, access or authorized budget is unavailable, report the audit as incomplete and the precise blocker; do not silently skip it or claim quality completion. Resolve material findings and audit the corrected final output before delivery as finished. A completed Gemini report supports quality review, not user acceptance or guaranteed commercial effectiveness.
 
 Save final revision, job and output IDs plus concise review coverage server-side. Deliver the actual authorized artifact and editable composition reference, with what changed, verified limitations, and settled cost when known. Do not report a queued job as a finished render or local output as a ContentFactory result.
