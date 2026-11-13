@@ -1,0 +1,4 @@
+interface:
+  display_name: "ContentFactory Director & Producer"
+  short_description: "Stage films and produce the missing content"
+  default_prompt: "Use $contentfactory-director to develop the directing plan and produce the material needed for this video."

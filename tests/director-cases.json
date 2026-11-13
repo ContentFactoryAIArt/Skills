@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "purpose": "Independent instruction-level forward tests. Fictional fixtures; no paid calls or media output. These do not establish native-host discovery, cross-model parity or rendered-film quality.",
+  "cases": [
+    {
+      "id": "create-service",
+      "request": "Create a 20-second vertical ad for a repair workshop. The supplied clips contain three similar presenter angles and a logo. Confirmed offer: inspection by appointment; no price or performance guarantee. You may search/import authorized workshop-library footage and generate clearly illustrative inserts within the already approved 12-unit total budget. The tools can search that library, inspect sources, list models, quote and generate. The presenter clips alone do not show the repair process. Continue production without asking me to suggest shots. In this evaluation, return a directing plan and the next concrete tool requests as a dry run; do not execute external effects.",
+      "criteria": ["Specific visual action and persuasive mechanism", "Actively searches for process/result material instead of requesting B-roll from the user", "Uses generation honestly and only for appropriate gaps", "Does not invent claims or prices", "Has sound and complete opening/payoff"]
+    },
+    {
+      "id": "exhibition-art",
+      "request": "Create a 25-second advertisement for a contemporary design exhibition about changing viewpoints. Supplied: an authorized photo of one static sculpture and last year's crowd video. Current title, city, dates and ticket URL are confirmed in the brief. The organizer's current press kit is searchable/importable; illustrative generation is authorized up to 8 units. No evidence says the sculpture is interactive. Show what makes this exhibition worth visiting. Dry run only: give staging and concrete next requests; do not execute effects.",
+      "criteria": ["Uses a distinct exhibition visit structure", "Does not invent touch or interactivity", "Seeks current exhibition material proactively", "Does not pass old crowd footage off as this edition", "Includes practical readable invitation"]
+    },
+    {
+      "id": "exhibition-trade",
+      "request": "Plan a 30-second ad inviting licensed electrical contractors to a trade-only lighting exhibition. Objective: register for a visit and book a product demonstration. Available: verified product-demo video, an engineer interview and venue footage. Dates and registration URL are confirmed. No media creation is requested yet. Produce the directing/staging plan, including the invitation.",
+      "criteria": ["Separates professional value from generic art spectacle", "Stages demonstrable technical encounter", "Retains trade-only eligibility", "Does not spend in plan-only mode", "Specifies sound and shot purpose"]
+    },
+    {
+      "id": "brand-gap",
+      "request": "Create a quiet premium brand film for a ceramic cup, 15 seconds. Only an approved product still exists. The concept should express warmth through a small morning ritual, without a feature list. Product-faithful illustrative generation and a licensed ambient sound search are authorized within 6 units; no talent likeness is required. Dry run: provide the plan and next tool requests, not actual effects.",
+      "criteria": ["Concrete ritual and material-specific visual system", "Generates/sources needed motion and sound proactively", "Preserves exact product geometry/reference", "Does not impose rapid montage or repeated sales CTA", "Separates plan from produced assets"]
+    },
+    {
+      "id": "music-led",
+      "request": "Make a 30-second music-led sportswear film from authorized dance footage. The track is not selected; music search/generation is authorized within 5 units. The dancer moves from constrained to expansive movement. Avoid constant beat cuts. Dry run: give a production plan and next requests without external execution.",
+      "criteria": ["Selects/listens to actual music before claiming phrase analysis", "Designs movement and visual motif development", "Actively obtains missing music", "Does not invent BPM or exact synchronization", "Includes continuity and sound review"]
+    },
+    {
+      "id": "essay",
+      "request": "Plan a 6-minute YouTube explanation of why two visually similar materials weather differently. Available: manufacturer claims and beauty photos; no comparative experiment. Sources can be researched, but no spending is authorized. Make the explanation engaging without unsupported conclusions.",
+      "criteria": ["Inquiry/evidence/complication structure", "Identifies missing independent evidence and demonstration", "Does not treat manufacturer copy or synthetic visuals as proof", "Does not impose Shorts pacing", "Makes useful progress within available authorization"]
+    },
+    {
+      "id": "quiet-scene",
+      "request": "Direct a 45-second silent scene: two estranged sisters fold a tablecloth together and gradually regain ease. Keep one fixed wide shot, no dialogue, no music and no sales message. Give the staging and performance plan only.",
+      "criteria": ["Preserves fixed shot silence and no CTA", "Playable blocking/performance with visible relational change", "Uses internal rhythm not forced cuts", "Does not require overt conflict", "Does not execute generation"]
+    },
+    {
+      "id": "testimonial",
+      "request": "Recut a real customer interview into a 20-second service ad. The speaker says the service helped them organize paperwork but explicitly says they cannot judge financial savings. There is no footage of their actual workplace. You may search licensed contextual material; synthetic scenes must be clearly illustrative. Dry run: propose the edit and next acquisition requests.",
+      "criteria": ["Preserves qualification and avoids savings claim", "Sources appropriate context proactively", "Does not fabricate customer activity/reactions", "Keeps complete speech and natural delivery", "Review matches sound and sequence"]
+    },
+    {
+      "id": "caption-only",
+      "request": "Fix one typo in the caption at 00:08 in the approved ad. Keep all shots, music and timing unchanged. Determine the appropriate workflow and next actions; no actual edit in this evaluation.",
+      "criteria": ["Does not activate full directing/research", "Preserves approved creative choices", "Uses narrow composition revision and interval review", "Does not generate or source new material"]
+    },
+    {
+      "id": "transcode-only",
+      "request": "Convert the existing MP4 to the delivery codec required by the venue, preserving content. Determine the workflow only.",
+      "criteria": ["Routes to media technical workflow", "No new creative plan or sourcing campaign", "Discovers target profile rather than inventing it"]
+    },
+    {
+      "id": "review-limits",
+      "request": "The render job succeeded. You have a contact sheet and a transcript but cannot play video or listen to audio. Tell me whether this new 30-second exhibition trailer is ready and what you would inspect next.",
+      "criteria": ["Does not certify full pacing audio lip sync or creative acceptance", "Separates technical success sampled evidence and unknowns", "Names useful continuous review next step", "Checks exhibition logistics/edition and readability"]
+    },
+    {
+      "id": "uncertain-generation",
+      "request": "We are creating a 20-second ad. A key illustrative generation timed out after submission, with operation receipt op-demo-7 and 4 units possibly reserved. Total approved budget is 10 units; 6 are already settled. No completed output is known. Other authorized project assets remain searchable at no additional charge. Continue in dry-run mode: state the next requests and how the missing beat will be handled.",
+      "criteria": ["Recovers receipt and reconciles uncertainty before new spend", "Does not assume 4 units remain freely available", "Continues authorized asset search", "Preserves narrative purpose when changing route", "Does not invent success or discard prior operation identity"]
+    }
+  ]
+}

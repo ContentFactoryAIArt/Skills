@@ -16,10 +16,11 @@ Use ContentFactory as the execution and storage system for creative work. Read t
 
 ## Route only the work needed now
 
-Load the relevant specialist; do not load all seven for a small revision.
+Load only the relevant specialists. Reuse already-loaded shared and director instructions instead of re-entering their routing steps.
 
 | Requested work | Specialist |
 | --- | --- |
+| Direct a new video, ad or film; substantially recut its creative approach; plan staging and obtain missing content | [director](../contentfactory-director/SKILL.md) |
 | Locate/select a project, import/upload/download, organize media or asset relations | [assets](../contentfactory-assets/SKILL.md) |
 | Research external creative sources; collect Telegram channels, groups or forums | [research](../contentfactory-research/SKILL.md) |
 | Generate/edit with a model; synthesize speech, music or sound | [generate](../contentfactory-generate/SKILL.md) |
@@ -28,7 +29,7 @@ Load the relevant specialist; do not load all seven for a small revision.
 | Deterministic photo corrections, masks or layered photo documents | [photo](../contentfactory-photo/SKILL.md) |
 | Author/simulate/render 3D scenes | [3D](../contentfactory-3d/SKILL.md) |
 
-For a new advertisement or substantial creative rewrite, read [advertising](references/advertising.md) before choosing shots. For a timecode/scene revision, read [small edits](references/small-edits.md). Ordinary low-impact edits do not need a new research campaign, storyboard approval or full paid review.
+For new videos, advertisements and films or substantial creative recuts, start with the director before assembly: establish concrete staging and proactively source, import or generate missing coverage within existing authorization and budget. For advertising, also read [advertising](references/advertising.md) for evidence and edit safeguards. For a timecode/scene revision, read [small edits](references/small-edits.md). Ordinary low-impact edits do not need a new research campaign, storyboard approval or full paid review.
 
 For Grok Build requests involving video on the user's PC, read [Grok local-video intake](references/grok.md). It defines the user-authorized native intake/review path and the subsequent ContentFactory transfer.
 

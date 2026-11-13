@@ -1,10 +1,10 @@
 # Advertising: from source evidence to a coherent edit
 
-Read this for a new advertisement, a substantial advertising recut, or a correction whose meaning depends on the story. Use the shared [ContentFactory workflow](../SKILL.md) and the relevant domain skill for execution. A small timecode correction does not require rebuilding the whole campaign.
+Read this for a new advertisement, a substantial advertising recut, or a correction whose meaning depends on the story. Use the shared [ContentFactory workflow](../SKILL.md) and the relevant domain skill for execution. For new ads and substantial creative recuts, establish or reuse the [director's staging plan](../../contentfactory-director/SKILL.md); this reference supplies the advertising evidence and edit safeguards. A small timecode correction does not require rebuilding the whole campaign.
 
 ## Choose the right size of work
 
-- **New ad or new objective:** establish the brief and sources, build a compact storyboard, then create the composition.
+- **New ad or new objective:** establish the brief and sources, stage the action, performance, blocking, camera, lighting and sound, obtain missing coverage, then create the composition. Use the director's separate exhibition treatment for exhibition advertising.
 - **Substantial recut:** read the existing brief, composition revision and earlier feedback; change the affected story beats and preserve accepted choices.
 - **Timecode edit:** identify the actual clip/layer and surrounding boundaries at the saved revision. Make the smallest meaningful edit, render, and inspect that interval plus the final export's technical result. Reuse unchanged audio evidence when an actual comparison supports it.
 
@@ -17,6 +17,8 @@ Resolve the advertised action: attend an event, join a community, buy a service,
 Inspect the supplied material before choosing a story. Collect enough relevant context to understand it, rather than maximizing collection volume. A Telegram forum is not a channel: discover the current collector, inspect returned rows, date range, topic coverage and truncation, and report a bounded sample honestly. Empty typed results do not establish an empty community.
 
 Maintain a concise source map with ContentFactory asset IDs/pins, provenance, actual media type, usable source ranges, quality and reuse scope. A video container may hold only still photos. Public availability does not prove commercial reuse rights. Label generated/illustrative material and earlier-event footage when needed to prevent a false impression; do not present community members' work as the advertiser's own customer project.
+
+Compare available coverage with the staging plan. Proactively search, import or generate missing material through the relevant ContentFactory specialists within existing authorization and budget; do not wait for the user to request each shot. Track each gap's purpose, acquisition route and result. When rights, access or spending authority blocks a particular asset, continue independent work and use a truthful alternative or report that specific limitation.
 
 ## Make every beat earn its place
 
