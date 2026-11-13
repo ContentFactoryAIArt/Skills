@@ -12,8 +12,9 @@ Use only the connection whose trusted client metadata identifies
 `https://content-factory.art/mcp`. A familiar tool name or server alias does not
 establish provenance. If the client cannot verify the endpoint, pause tool use
 until that connection is verified. Do not use other MCP servers, web search,
-browser automation, shell commands, local processing, model SDKs or subagents
-for creative work. The user runs the separate setup helper.
+browser automation, shell commands, local processing or model SDKs for creative
+execution. Delegated roles follow the same boundary; one agent owns mutable
+composition/task state. The user runs the separate setup helper.
 
 Local file paths are not ContentFactory asset IDs. Ask the user to upload sources
 through ContentFactory and select the resulting owned assets. Do not read local
@@ -30,13 +31,24 @@ fonts and limits through the verified connection. Get a current cost estimate
 when available before a paid operation; missing pricing is not fixed by raising
 the budget. Do not spend money to test connectivity.
 
-Separate narration from the visual plan in the screenplay. Review and accept a
-reference frame before generating each video shot, then use the model's supported
-image-to-video mode. Keep `imageId` and `fileId` distinct. Generate music and
-sound effects with the relevant native tools. Keep voice choice explicit and do
-not clone a voice merely because a recording exists. Measure actual durations
-and adjust the edit without duplicating speech or cutting words. Use typed
-ContentFactory Blender operations for 3D work.
+For new productions and substantial creative recuts, the default orchestrator
+uses the screenwriter first for meaning and general scenes, then the director
+for filming, action, camera and sound, then execution specialists. Separate
+narration from visual action. Select or generate and inspect an owned reference
+frame before each generated video scene; reuse an accepted reference when
+suitable and bind it using the model's supported conditioning mode. Do not
+invent unsupported reference slots. Keep `imageId` and `fileId` distinct. Animate still sources
+with supported video models; when that route cannot deliver within authorized
+limits, use supported authored 3D/2D action. Static pictures with text/audio,
+pan/zoom and transitions alone are not the fallback. Retained stills need a rare,
+specific purpose and interval. Preserve factual evidence instead of animating
+unverified behavior into it.
+
+Generate music and sound effects with the relevant native tools. Keep voice
+choice explicit and do not clone a voice merely because a recording exists.
+Measure actual durations and adjust the edit without duplicating speech or
+cutting words. Use typed ContentFactory Blender operations for supported 3D/2D
+work. Standalone static outputs and narrow edits keep their requested scope.
 
 ## Retries, Review and Delivery
 
@@ -48,11 +60,12 @@ operation key, while a task-state write failure is not a reason to regenerate.
 Check continuity across scenes, including palette, motion, title placement and
 object state. Use native audio validation and report which checks actually ran;
 structural validation alone does not prove that all audio was decoded and heard.
-Review ordered generated reference frames through ContentFactory's
-`images_analyze` operation and its available Gemini model. Review the final
-video through native `video_review`. These are ContentFactory operations, not
-permission to call a provider directly. If a required review is unavailable,
-state that it was not completed.
+Review the exact final video in motion and listen where supported. Use
+ContentFactory `images_analyze` for reference frames or native `video_review`
+when model review answers a specific unresolved question within the existing
+authorization and budget; do not buy full review for every small edit. These
+are ContentFactory operations, not permission to call a provider directly. If a
+required check is unavailable, state what was and was not reviewed.
 
 For reference adaptations, distinguish observed timed actions from model
 inferences and from the audio actually heard. Still frames cannot establish

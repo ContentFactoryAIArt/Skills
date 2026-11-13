@@ -6,6 +6,16 @@ context delivery and available tools; keep staging, production and review
 standards intact. Source details and documentation discrepancies are recorded in
 [agent research](research-agents.md).
 
+Across hosts, the shared `contentfactory` skill is the default orchestrator above
+the screenwriter, director and execution specialists. New productions and
+substantial creative recuts run screenwriter first (meaning and general scenes),
+director second (filming and staging), then specialists. An explicit director
+invocation still recovers or obtains that script before directing; a narrow edit
+does not restart the whole process. Motion is the production default: animate still
+sources with an appropriate discovered video model, then use supported
+ContentFactory 3D/2D animation if that route cannot work. Static-picture sequences
+with text/audio and pan/zoom alone are not a fallback.
+
 ## Install the complete folder safely
 
 The source is `skills/contentfactory-director` in
@@ -60,8 +70,9 @@ Example production prompt:
 
 ```text
 $contentfactory-director Create the 30-second exhibition invitation in the
-selected ContentFactory project. Use the confirmed brief and my existing spend
-limit. Develop the encounter and concrete staging, inspect available material,
+selected ContentFactory project. Use the shared orchestrator, recover the
+screenwriter's meaning and general scenes first, and respect my existing spend
+limit. Develop concrete moving staging, inspect available material,
 then source or generate missing shots within that authorization. Assemble and
 revise the cut. Record the exact export and what you actually watched/listened to.
 Ask only for a prerequisite that blocks a correct or authorized action.
@@ -84,8 +95,9 @@ Example creative-recut prompt:
 
 ```text
 /contentfactory-director Rework the selected 20-second ad: repeated presenter
-shots make it feel static. Recover accepted choices and inspect the source
-material before diagnosing it. Produce an action-led beat plan, acquire missing
+shots make it feel static. Under the shared orchestrator, recover accepted choices,
+the screenwriter's scene progression and source material before diagnosing it.
+Direct an action-led shot plan, acquire missing
 coverage through the authorized ContentFactory paths, then make the recut.
 Preserve complete purposeful actions. Report concrete repairs and review limits.
 ```
@@ -109,7 +121,8 @@ Example staging prompt:
 
 ```text
 /contentfactory-director Produce the approved fictional music-led spot using
-the selected ContentFactory project and authorized budget. Design the performer's
+the selected ContentFactory project and authorized budget. Follow the shared
+orchestrator and recover the screenwriter's scenes first. Design the performer's
 action, spatial progression and visual motif around the actual music. Test the
 hardest essential movement early, create missing illustrative material, then
 assemble and review the result. Use current tool/model contracts and real receipts.
@@ -134,8 +147,11 @@ and unresolved work between calls. Do not reload every research dossier by defau
 Use this initial instruction with the attached material:
 
 ```text
-Use the attached contentfactory-director instructions and selected references
-for this request. First distinguish creation, planning-only and narrow editing.
+Use the attached contentfactory orchestrator, contentfactory-screenwriter,
+contentfactory-director instructions and selected references for this request.
+First distinguish creation, planning-only and narrow editing. For new productions
+or substantial creative recuts, establish the script's meaning and general scenes
+with the screenwriter, then direct moving scenes before specialist execution.
 The capability packet below describes the tools actually exposed in this session.
 Execute authorized production through those tools; if a required tool is absent,
 complete the usable plan and identify the exact unavailable execution step.
@@ -179,8 +195,9 @@ compatibility roots and loads a skill by ID. Respect those host mechanisms witho
 adding approval pauses to routine work already authorized by the user.
 
 ```text
-Use contentfactory-director for this production. Load its production reference
-and the form relevant to my brief. Use the current connected ContentFactory
+Use the contentfactory orchestrator for this production, screenwriter first and
+contentfactory-director second. Load the director's production reference and the
+form relevant to the script. Use the current connected ContentFactory
 capabilities to close material gaps, then assemble and inspect the result.
 Preserve the configured model and report unsupported review modalities.
 ```

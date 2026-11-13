@@ -57,6 +57,32 @@ resource blocks; do not claim that issuing a download ticket saved a file.
 
 ## Workflow
 
+The default orchestrator owns the complete production and coordinates these
+roles in order: **screenwriter first, director second, execution specialists
+afterward**. For a new video/ad/film or substantial creative recut, use the
+installed `contentfactory` orchestrator, `contentfactory-screenwriter` and
+`contentfactory-director` when present. Reuse their saved handoffs when resuming.
+If only this compatibility folder is installed, perform the same roles in
+sequence here: the screenwriter establishes meaning, audience response, story
+beats and general scenes; the director turns those scenes into filming choices,
+visible action, performance, camera, sound and acquisition tasks. Keep the roles
+distinct even when one agent performs both. A narrow correction or standalone
+photo/audio/3D request does not require a new screenplay or production campaign.
+
+For moving-picture work, purposeful movement is the default. Do not assemble
+static pictures with text and narration as the normal production strategy.
+Static holds need a specific creative reason; a predominantly static treatment
+requires an explicit user request or agreed exception. Existing authentic
+footage is suitable. Where only still sources exist and illustration is
+appropriate, animate them with a compatible discovered video model. If models
+are unavailable, unsuitable or fail within the authorized attempt/budget limit,
+use supported authored 3D/2D animation through ContentFactory, including drawing
+or object action where available. Pan/zoom, moving flat picture planes, title
+animation and transitions alone do not fulfill that fallback. Recover uncertain
+paid receipts before changing routes; report unavailable animation instead of
+silently falling back to a slideshow. Never use generated movement as proof of
+real product behavior, an event or customer work.
+
 Read [references/protocol.md](references/protocol.md) for live discovery,
 authorization and recovery. Recover the existing creative task and receipts
 before restarting. Keep one author for mutable task/composition state. Reuse
@@ -73,8 +99,9 @@ Load only the reference relevant to the next work:
 - [Preparation and screenplay](references/preparation.md): select owned sources,
   collect Telegram channel/group/forum history, import supported URLs, establish
   the brief and write a timed scene plan.
-- [Visuals and review](references/visuals.md): accepted reference frames before
-  video generation, ordered continuity checks and final-video review.
+- [Visuals and review](references/visuals.md): inspected reference frames before
+  video generation, supported conditioning, continuity checks and proportionate
+  final-video review.
 - [Audio](references/audio.md): voices, music, sound effects, exact timing and
   honest listening coverage.
 - [Composition](references/compose.md): native timeline edits, scene continuity,
@@ -95,7 +122,7 @@ Save concise task state and receipts server-side; no local journals, checkpoint
 scripts or file handoffs are required or permitted by this skill.
 
 For advertisements, recover the goal/CTA and verified source context, then
-keep a timed shot rationale: why each image is shown, what its text/voice means,
+keep a timed shot rationale: what each moving scene shows and changes, what its text/voice means,
 and its provenance/quality. Let opening actions complete before cutting, preserve
 full spoken clauses, keep captions stable and away from mouths, and avoid
 repeated or meaningless still inserts. For a timecode correction, resolve the

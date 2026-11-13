@@ -59,10 +59,13 @@ capabilities, selected model/voice, exact preflight and client viewing/listening
 abilities. Discovery, permission, pricing, admission and completed execution are
 different facts. Do not pay merely to discover whether a route works.
 
-Write the script in context. Map each passage to a meaningful visual with stable
-scene IDs. Keep spoken text separate from stage direction and send exact chosen
-words to speech synthesis. Draft timings remain estimates until audio is
-measured; adjust the edit or rewrite within the authorized task.
+Perform the screenwriter role first: establish the meaning, intended viewer
+response, story beats and general scenes, using stable scene IDs. Then perform
+the director role: turn those scenes into observable action, performance,
+filming, camera, sound and acquisition choices. Reuse the installed specialist
+handoffs when available. Keep spoken text separate from stage direction and
+send exact chosen words to speech synthesis. Draft timings remain estimates
+until audio is measured; adjust the edit or rewrite within the authorized task.
 
 For references, carry observed timed actions and required fidelity into the
 scene plan. Resolve unobserved actions before spending on dependent scenes.
@@ -71,8 +74,13 @@ Plan neighboring scenes and recurring headline anchors together, following
 source catalog changes, prefer a flexible quantity claim unless an exact count
 is requested and verified.
 
-For generated video scenes, first select/generate and accept each reference
-frame as described in `visuals.md`. Suitable independent audio/visual requests
+For generated video scenes, select a supported route that delivers the intended
+action. Select or generate and inspect owned reference frames before video
+submission, as described in `visuals.md`; reuse accepted references. A still is
+preparation, not the finished
+scene. Animate still sources with compatible video models when appropriate,
+then use supported authored 3D/2D action if models cannot deliver within the
+authorized limits. Do not substitute a slideshow. Suitable independent audio/visual requests
 can run concurrently. If runtime exceeds a discovered composition limit,
 preserve total duration and story order in the fewest consecutive parts that
 fit. If one file is explicitly required, discover a native assembly path and

@@ -19,7 +19,7 @@ Record what artifact/revision and ranges were actually inspected, how, and what 
 
 | Complaint | Inspect | Possible repair, chosen by evidence |
 | --- | --- | --- |
-| “Boring/static” | Does anything change in action, knowledge, expectation, space or sound? | Stage a reveal, obtain the missing action/result, compress dead time, or clarify the question. Preserve useful stillness. |
+| “Boring/static” | Does the image contain a developing action, interaction, transformation or spatial reveal, or only text/audio over stills and pan/zoom? | Obtain applicable moving footage or animate the still through a suitable video model; if unsuitable/unavailable, author 3D/2D action. Preserve intentional performed stillness and rare recorded still inserts. |
 | “Repetitive” | Are consecutive shots doing the same narrative job, even with different people? | Remove/merge redundant beats; obtain distinct evidence or a new stage of the action. Changing zoom alone may repeat the problem. |
 | “Random/AI-looking” | Are subject, identity, product, physics, geography and style coherent? | Restore anchors and plausible actions; simplify an unstable interaction; replace a mismatched clip. Attractive frames do not excuse inconsistency. |
 | “No story” | Can the viewer follow what changes and why? | Restore missing setup or consequence; reorder for causality/association; obtain the bridge rather than explain everything in voiceover. |
@@ -31,11 +31,11 @@ Make notes as **moment → observed problem → intended effect → concrete cha
 
 ## Three review moments
 
-**Treatment:** test the premise, specificity, audience, truthfulness and ability to produce essential shots. Check the acquisition plan actually closes the story gaps. A producer challenges cost/rights/schedule; a director resolves the coherent choice. Do not add endless role-play debates.
+**Treatment:** recover the screenwriter's meaning and general scenes before judging the director's filming plan. Test specificity, audience, truthfulness and ability to produce essential moving shots. Check the acquisition plan actually closes the story gaps, with model animation and a feasible 3D/2D alternative where still sources need motion. A producer challenges cost/rights/schedule; the director resolves filming choices and returns changes of meaning to the screenwriter through the orchestrator. Do not add endless role-play debates.
 
 **Rough timed sequence:** check setup/payoff, spatial logic, performance, pauses, change between beats, sound structure and provisional text readability. Test the uncertain essential shot before finishing the whole film. Separate missing footage from an editing problem. When useful, compare two meaningfully different constructions rather than two color grades.
 
-**Exact final export:** watch and listen through the sequence when supported, then inspect specific joins, captions, subject fidelity, interruptions and technical defects. A muted pass can test visual comprehension for relevant placements; an audio-only pass can reveal sonic structure. Neither replaces the combined experience. Check the actual target framing and reading size, not just a large desktop preview.
+**Exact final export:** watch and listen through the sequence when supported, then inspect specific joins, captions, subject fidelity, interruptions and technical defects. Confirm the planned visible actions actually develop; a successful render, animated text, soundtrack or drift across a still cannot pass motion acceptance. Check each still insert against its recorded purpose and interval; a narrated slideshow needs an explicit user request. A muted pass can test visual comprehension for relevant placements; an audio-only pass can reveal sonic structure. Neither replaces the combined experience. Check the actual target framing and reading size, not just a large desktop preview.
 
 ## Judging a plan without pretending it is a finished film
 

@@ -41,7 +41,9 @@ If only audio transfer is authorized, uploading the full video container is stil
 
 ## What a useful first draft should contain
 
-Codex should first connect the brief to the actual sources and build a compact story: a clear opening, relevant evidence/context, then the invitation or action. The storyboard should explain why each shot is present and what the viewer is meant to understand. It should not invent names, venue details, attendance or customer-work claims.
+The default ContentFactory orchestrator uses the screenwriter first to connect the brief and verified sources to a meaning and general scene sequence, then the director to plan filming, action, performance, camera and sound. Production specialists execute that plan. Reuse accepted scripts; this handoff is not an automatic approval pause. The storyboard should explain why each shot is present and what the viewer is meant to understand. It should not invent names, venue details, attendance or customer-work claims.
+
+Video should primarily contain moving scenes. Still sources are animated through supported models; if that cannot deliver, the director stages supported 3D/2D animation. Static pictures with narration, text, pan/zoom or transitions are not the default fallback. Retained stills need a specific purpose, such as an intact evidence image or legible end card. A request for a photo or poster remains a still-image task.
 
 You can ask for the board before rendering when you want creative control:
 

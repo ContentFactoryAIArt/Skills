@@ -1,7 +1,7 @@
 interface:
   display_name: "ContentFactory"
   short_description: "Edit photos, video and 3D with ContentFactory"
-  default_prompt: "Use $contentfactory-video to edit my photos, video or 3D scene through ContentFactory in my preferred language."
+  default_prompt: "Use $contentfactory-video through ContentFactory in my preferred language; for a new video, start with the screenwriter, then the director, and produce purposeful moving scenes."
 dependencies:
   tools:
     - type: "mcp"

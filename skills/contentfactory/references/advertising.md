@@ -1,10 +1,10 @@
 # Advertising: from source evidence to a coherent edit
 
-Read this for a new advertisement, a substantial advertising recut, or a correction whose meaning depends on the story. Use the shared [ContentFactory workflow](../SKILL.md) and the relevant domain skill for execution. For new ads and substantial creative recuts, establish or reuse the [director's staging plan](../../contentfactory-director/SKILL.md); this reference supplies the advertising evidence and edit safeguards. A small timecode correction does not require rebuilding the whole campaign.
+Read this for a new advertisement, a substantial advertising recut, or a correction whose meaning depends on the story. Use the shared [ContentFactory orchestrator](../SKILL.md) and the relevant domain skill for execution. For new ads and substantial creative recuts, establish or reuse the [screenwriter's script](../../contentfactory-screenwriter/SKILL.md) first, then the [director's staging plan](../../contentfactory-director/SKILL.md); this reference supplies the advertising evidence and edit safeguards. A small timecode correction does not require rebuilding the whole campaign.
 
 ## Choose the right size of work
 
-- **New ad or new objective:** establish the brief and sources, stage the action, performance, blocking, camera, lighting and sound, obtain missing coverage, then create the composition. Use the director's separate exhibition treatment for exhibition advertising.
+- **New ad or new objective:** establish the brief and sources, have the screenwriter define the meaning and general scenes, then have the director stage the action, performance, blocking, camera, lighting and sound, obtain missing moving coverage, and create the composition. Use the director's separate exhibition treatment for exhibition advertising.
 - **Substantial recut:** read the existing brief, composition revision and earlier feedback; change the affected story beats and preserve accepted choices.
 - **Timecode edit:** identify the actual clip/layer and surrounding boundaries at the saved revision. Make the smallest meaningful edit, render, and inspect that interval plus the final export's technical result. Reuse unchanged audio evidence when an actual comparison supports it.
 
@@ -24,7 +24,7 @@ Compare available coverage with the staging plan. Proactively search, import or 
 
 Use a compact board with these fields, keeping it in the project's creative task or another supported project record:
 
-| Timeline beat | Source asset and range | Why this shot now? | Spoken/text meaning | Cut and quality risk |
+| Timeline beat | Source asset/range and motion route | Why this shot now? | Spoken/text meaning | Cut and quality risk |
 |---|---|---|---|---|
 | Opening | Exact source range | Gives the viewer a reason to continue | One clear promise or question | Does the visual action reach its readable payoff? |
 | Evidence/context | Distinct relevant shots | Supports the promise | Explains the connection when pictures alone cannot | Is this a still, a repeat, or misleading context? |
@@ -33,6 +33,8 @@ Use a compact board with these fields, keeping it in the project's creative task
 Adapt the shape to the material. Dynamic editing means meaningful change and movement, not an arbitrary maximum shot length. Let an opening action complete and its result register before cutting. Avoid both an unrelated static opener and a generated motion fragment that ends before its payoff. Check actual source timestamps and exported timestamps; a seek followed by playback/wait is not an exact-frame sample.
 
 Vary people, shot size and visual action when the sources support it. Do not repeatedly return to one speaker angle to fill gaps. A work-photo sequence needs an editorial reason and sufficient context; motion effects do not supply meaning. A concise line such as “Работы мастеров из сообщества” can connect images to the story, but remove an unwanted insert when the user asks rather than retaining it behind new styling.
+
+The main body must use moving scenes. For still sources that may truthfully be animated, obtain subject/scene movement through supported video models; when that route cannot deliver, stage genuine 3D/2D animation through supported ContentFactory operations. A flat photo pan/zoom with narration, animated text or music is not the fallback. Preserve work/evidence photos intact when animation would imply unverified behavior; seek authentic moving coverage or a clearly identified illustrative scene instead. Any retained still needs a specific purpose and interval, such as a source-evidence insert or readable end card. Missing footage and failed generation alone do not justify a slideshow.
 
 ## Keep voice and picture coherent
 

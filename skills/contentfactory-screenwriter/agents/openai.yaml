@@ -1,0 +1,6 @@
+interface:
+  display_name: "ContentFactory screenwriter"
+  short_description: "Write meaning and scenes before filming"
+  default_prompt: "Use $contentfactory-screenwriter under the ContentFactory orchestrator to write the meaning and general scenes, then hand the script to the director when production is requested."
+policy:
+  allow_implicit_invocation: true

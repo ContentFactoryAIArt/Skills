@@ -6,12 +6,15 @@ executable. Scale the visible paperwork to the task.
 
 ## Recover the assignment and choose the working mode
 
-Recover the current brief, user corrections, selected project, composition
-revision, approved material, receipts and unfinished work before inventing a new
-concept. Use saved creative-task context when present. Preserve the distinction
-between an approved choice and an earlier suggestion.
+Recover the current brief, screenwriter handoff, user corrections, selected
+project, composition revision, approved material, receipts and unfinished work.
+For a new production or substantial creative recut, the shared ContentFactory
+orchestrator first has the screenwriter establish meaning and general scenes,
+then hands them to the director for filming. Reuse a suitable existing script.
+Use saved creative-task context when present. Preserve the distinction between
+an approved choice and an earlier suggestion.
 
-- **Creation or creative reconstruction:** develop the idea and concrete staging,
+- **Creation or creative reconstruction:** translate the script into concrete staging,
   obtain or generate missing material, assemble, review and repair the deliverable
   within the authorized scope. A shopping list is not completion.
 - **Plan only:** deliver a treatment, shot plan, material requirements and feasible
@@ -28,18 +31,20 @@ assumptions for nonblocking choices. Ask only where missing information prevents
 a correct result or an action needs authorization; continue independent work.
 For an event invitation, confirm edition, venue, dates, eligibility and destination.
 
-Write the governing idea in concrete terms: what the viewer discovers or feels,
-which visible or audible event produces that change, and why this subject or
-brand belongs in it. Choose a suitable form before prescribing tempo. A quiet
-encounter, product demonstration, music performance and direct-response offer
-need different evidence and pacing.
+Recover the screenwriter's governing idea: what the viewer discovers or feels,
+which general scene produces that change, and why this subject or brand belongs
+in it. Direct the visible action and sound that carry it. A quiet encounter,
+product demonstration, music performance and direct-response offer need different
+evidence and pacing. Return changes of meaning or general scenes to the
+screenwriter through the orchestrator instead of replacing the script silently.
 
 ## Make a staging plan someone can execute
 
-Break the chosen treatment into changes in action, knowledge, relationship or
-sensory experience. Each scene needs a purpose and an observable event. Link the
-events through cause, contrast, correspondence, escalation or musical development.
-Do not substitute a sequence of adjectives or asset categories for direction.
+Translate the script's general scenes into filmed changes in action, knowledge,
+relationship or sensory experience. Each scene needs a purpose and an observable
+visual event. Preserve the script's links through cause, contrast, correspondence,
+escalation or musical development. Do not substitute a sequence of adjectives or
+asset categories for direction.
 
 Use shot cards for important shots. These are planning content, **not additional
 ContentFactory request fields**. Combine cards where one continuous shot carries
@@ -55,6 +60,7 @@ several beats; retain distinct cards where acquisition or continuity differs.
 | Continuity | Identity references, wardrobe, geometry, screen direction, eyelines, hand/prop state, environment and sound space that must persist |
 | Sound and text | Dialogue or verified quote, relevant effects/ambience, music entrance or phrase, caption function and reading opportunity |
 | Timing and edit | Reason for entering/leaving; provisional timeline position; complete action required; handles needed for the planned transition |
+| Motion route | Existing applicable footage, model animation, or authored 3D/2D; what visibly changes from start to end; any exceptional still insert with its purpose and interval |
 | Material and acceptance | Existing source or acquisition task; exact missing element; what must be visible/audible for the shot to work |
 
 Keep **source in/out** separate from **timeline in/out**. The former selects media;
@@ -100,6 +106,25 @@ Choose the route that serves the shot:
 - **Generate or model-edit:** create missing illustrative material, animation,
   transitions, voice, music or effects when appropriate and authorized. Use
   reference assets and model capabilities suited to the shot's actual demands.
+
+For a moving scene built from still sources, discover a suitable image-to-video
+or other video model first. A generated still is an intermediate, not the finished
+scene: specify subject/object action, development, ending, continuity and usable
+duration, then inspect the motion output. If the model route is unavailable,
+unsuitable, fails the required fidelity/action or reaches its retry/spend bound,
+author the scene through supported ContentFactory 3D or 2D animation. Use real
+object/character movement, interaction, transformation or developing diagrams.
+Discover the relevant native/composition capabilities rather than inventing a
+2D operation or substituting a local renderer.
+
+Static-image sequences with text and audio are not the fallback. A flat pan,
+zoom, crossfade, parallax tableau or moving caption does not replace the scene's
+action. Record rare still inserts with a specific purpose and interval, such as
+a document inspection or brief title card; keep them subordinate to the moving
+sequence. Explicitly requested static/slideshow work retains its requested form.
+Missing footage or a failed provider does not imply permission for a slideshow.
+If an essential moving beat has no authorized feasible route, identify that
+unresolved beat instead of silently replacing it with a static picture.
 
 Proceed with authorized acquisition after choosing the route. Inspect each result,
 accept or reject it against its intended function, attach the usable owned
@@ -166,9 +191,10 @@ durable context helps. Read the task before updating it and use its current
 re-read and reconcile the intended change instead of overwriting blindly.
 
 The contract inspected for this reference stores `brief` and `reviewNotes` as
-**strings**. Put the treatment, shot-card detail, gap ledger and review evidence
-in those supported text fields as appropriate. `scenes` is a typed array of
-composition scenes, not arbitrary shot-card objects: current fields include
+**strings**. Put the screenwriter handoff, treatment, shot-card detail, motion
+routes, still exceptions, gap ledger and review evidence in those supported text
+fields as appropriate. `scenes` is a typed array of composition scenes, not
+arbitrary shot-card objects: current fields include
 `sceneId`, `name`, `thesis`, `intervalFrames` and the documented layer-ID lists.
 Populate actual known scene/layer relationships and ranges; do not invent IDs
 to make a planning document resemble a saved composition.
@@ -193,8 +219,10 @@ skill. General validation alone does not establish headroom or creative quality.
 Review the highest-impact question first: does the idea work, does the viewer
 understand the action, and does the subject matter? Then inspect performance,
 continuity, pacing, text, sound and delivery. A new angle is not progress if it
-repeats the same information. Preserve intentional silence and stillness where
-they create expectation or meaning. Test muted comprehension when the placement
+repeats the same information. Preserve intentional silence and performed stillness
+where they create expectation or meaning; this does not authorize static-picture
+filler. Check that moving beats actually develop and exceptional still intervals
+serve their recorded purpose. Test muted comprehension when the placement
 needs it, without flattening a sound-led film into competing captions.
 
 Record review evidence precisely: source descriptions, inspected stills, sampled

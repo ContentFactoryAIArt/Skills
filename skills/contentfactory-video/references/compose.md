@@ -14,6 +14,13 @@ supported; extracting every soundtrack is not a prerequisite for rendering.
 
 ## Motion and Editorial Continuity
 
+Assemble the director's moving scenes after the screenwriter/director handoff.
+Missing footage calls for suitable real footage, model-animated sources or
+authored 3D/2D action within the existing authorization. Do not fill the gap with
+static pictures, narration and text. Native layer movement below can support
+editing or genuine 2D action, but merely panning/zooming a flat picture or moving
+titles does not supply missing subject/scene motion.
+
 For authored movement, use native `motionSequence` when exposed. Supply ordered
 rational-second poses, explicit time rounding, full transforms and easing.
 Use exact rounding when a time lands on a frame; inspect returned resolved
