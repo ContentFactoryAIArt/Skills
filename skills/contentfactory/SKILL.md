@@ -1,75 +1,32 @@
 ---
 name: contentfactory
-description: Orchestrate creative media in ContentFactory, with screenwriter then director for new videos, advertisements, films and substantial creative recuts. Also route photos, audio, 3D, captions and timecode edits and retain project state. Not for software development, ordinary prose or general filesystem administration.
+description: Route ContentFactory projects across photo, video, audio, 3D and effects. Use for mixed-media work or end-to-end video production.
 ---
 
-# ContentFactory default creative orchestrator
+# ContentFactory
 
-Use ContentFactory as the execution and storage system for creative work. Read this shared entrypoint even when a specialist skill was selected first. Its presence in a skill catalog is not evidence that it was followed.
+Work in the selected ContentFactory project. Recover the brief, accepted choices, pinned assets, saved revisions and unfinished receipts before starting new work. Use the connected ContentFactory operations for media, project state and rendering. [Execution](references/execution.md) covers rights, transfer, spending and recovery. Use the [operation routes](references/operation-routes.md) for live discovery.
 
-## Lead the roles in order
+## Choose the workflow
 
-This is the default orchestrator above the screenwriter, director and execution specialists. It retains the user's goal, project state, authorization and budget, coordinates handoffs, and carries the requested work through delivery. Selecting a child skill directly does not bypass this workflow.
-
-For a new video, advertisement or film, or a substantial creative recut, use this sequence:
-
-1. **Screenwriter first:** read [screenwriter](../contentfactory-screenwriter/SKILL.md). Establish the meaning, audience experience, narrative progression and general scenes: what happens, why it matters, and what changes. Recover an existing accepted script instead of rewriting it unnecessarily.
-2. **Director second:** pass that script to [director](../contentfactory-director/SKILL.md). The director owns filming: performance, blocking, subject/scene action, camera, light, sound, shot timing and the acquisition/animation plan. For generated scenes, prepare and inspect actual reference frames, then a rough storyboard and proposed object placement, and obtain the user's approval of that concrete package before video generation. If feasibility changes a scene's meaning, return that scene to the screenwriter before filming its replacement.
-3. **Production specialists next:** give research, assets, generation, 3D/2D animation, composition and media inspection the director's concrete tasks. Obtain missing motion, assemble, render and review; the orchestrator integrates results and retains the editable project and receipts.
-
-These are responsibilities, not a requirement for a particular multi-agent tool. Delegate separate roles when available; otherwise perform them explicitly in this order. Role handoffs alone do not require approval, but the user's [reference-frame/storyboard approval](references/director-approval.md) is required before generated video, including newly authored 3D/2D animation. Script-only requests stop after the script; directing-only requests stop after the requested concrete plan. A caption correction, transcode, standalone photo or other narrow task without new generated scenes preserves accepted creative choices and does not restart this approval.
-
-## Motion is the default for video
-
-Build moving scenes, not a sequence of static pictures with text, narration and music. Plan meaningful subject action, performance, physical change or an unfolding demonstration for the main body. Quiet action and a fixed camera are valid; constant cutting or camera shake is not required.
-
-- Prefer suitable authentic moving footage when the scene needs real evidence. For model-generated scenes, select or generate and inspect owned reference frames before video submission; reuse accepted references rather than generating them again. Use the live supported video/image-to-video models to animate the subjects and environment, binding references through supported conditioning fields. Do not invent source slots or claim a model received a reference it cannot accept. Reference frames are intermediate inputs, never completed video scenes. Describe the action's beginning, development and readable result.
-- Prefer **Seedance 2.5** for video generation when the live catalog exposes a configured route supporting the approved references, action, duration, output and authorized budget. Discover its actual ID, provider and model contract; the preference does not establish availability or price. Explain a necessary alternative and update the affected approval package when its staging changes; do not silently substitute another model or bypass the user's approval.
-- If model animation cannot deliver the scene because of capability, fidelity, rights, authorization, cost or a bounded failed attempt, have the director stage genuine 3D or 2D animation through supported ContentFactory operations. Animate objects, characters, materials or diagram relationships so the scene develops. Discover the actual capabilities; do not invent a model, animation endpoint or free rendering allowance.
-- A pan/zoom over a flat image, parallax alone, a moving border, animated captions, transitions and an audio bed do not satisfy a scene's motion requirement. They may support real moving scenes. Never quietly downgrade an unavailable animation route to a slideshow; redesign the beat with a viable route or report the exact remaining limitation.
-- Static shots are rare, purposeful exceptions, such as a specifically requested freeze, an archival/evidence image whose integrity matters, or a readable end card. Record the interval and reason in the creative task and keep the rest of the film moving. Lack of footage or failed generation alone is not a creative justification. Do not animate evidence into fictitious events or customer results.
-
-This rule applies to video production, not to a user asking for a still photo, poster or storyboard. Review actual motion in the rendered output where available; thumbnails and a successful export cannot establish it.
-
-## Execution boundary
-
-- Use the connected ContentFactory MCP operations for creative research/imports, generation, inspection, processing, editing, rendering, and durable creative assets/state. Do not silently substitute local FFmpeg, WinRT/MediaComposition, Python, browser editors, other generation tools, direct provider SDKs, or other services. This applies to a one-caption change or one clip removal too.
-- Discover the live supported operation and contract before deciding that a feature is unavailable. A missing capability, grant, transfer transport or provider is a specific limitation to report and resolve within ContentFactory. It is not permission to build a local rendering pipeline. Follow an explicit user override when one is actually given; disclose the changed execution path before using it.
-- Local instruction files, skill maintenance and user-requested reports are permitted. User-authorized transfer of an exact file through ContentFactory's documented client transfer transport, or viewing a returned artifact, is permitted. These exceptions do not authorize local media processing, an alternate asset store or a hidden HTTP upload helper. See [execution](references/execution.md) for transfer and recovery details.
-- Respect existing project grants, spending ceilings and privacy restrictions. Authorization to edit a local file is not automatically authorization to upload it or send its pixels/audio to an external model. Reuse an existing explicit authorization for its exact scope; ask only for missing authorization. Do not copy private media, transcripts, credentials or raw messages into logs, memories or issue trackers.
-
-## Route only the work needed now
-
-Load only the relevant specialists. Reuse already-loaded role instructions and handoffs instead of restarting their routing steps.
-
-| Requested work | Specialist |
+| Request | Start here |
 | --- | --- |
-| Write the meaning, narrative progression and general scenes for a new production or substantial creative recut | [screenwriter](../contentfactory-screenwriter/SKILL.md), first |
-| Film the script: stage action, performance and camera; obtain or animate missing content | [director](../contentfactory-director/SKILL.md), after the screenwriter |
-| Locate/select a project, import/upload/download, organize media or asset relations | [assets](../contentfactory-assets/SKILL.md) |
-| Research external creative sources; collect Telegram channels, groups or forums | [research](../contentfactory-research/SKILL.md) |
-| Generate/edit with a model; synthesize speech, music or sound | [generate](../contentfactory-generate/SKILL.md) |
-| Edit a timeline, scene/episode, caption, transition or audio mix; render/handoff | [composition](../contentfactory-composition/SKILL.md) |
-| Probe/process media, transcribe/analyze, inspect exact frames or audio | [media](../contentfactory-media/SKILL.md) |
-| Deterministic photo corrections, masks or layered photo documents | [photo](../contentfactory-photo/SKILL.md) |
-| Author, animate, simulate or render 3D/2D scenes with supported capabilities | [3D](../contentfactory-3d/SKILL.md) |
+| New film, ad or substantial creative recut | [Screenwriter](../contentfactory-screenwriter/SKILL.md), then [director](../contentfactory-director/SKILL.md), then the specialists needed below |
+| Generate or model-edit images/video, synthesize speech, music or SFX | [Generate](../contentfactory-generate/SKILL.md) |
+| Make precise corrections, masks or layered photo edits | [Photo](../contentfactory-photo/SKILL.md) |
+| Edit video/audio timelines, captions, transitions or effects, then render | [Composition](../contentfactory-composition/SKILL.md). See [small edits](references/small-edits.md) for timecode and scene revisions |
+| Inspect, transcribe, process media or clean standalone audio | [Media](../contentfactory-media/SKILL.md) |
+| Author, animate or simulate 3D/2D scenes | [3D](../contentfactory-3d/SKILL.md) |
+| Find, import, transfer or organize project assets | [Assets](../contentfactory-assets/SKILL.md) |
+| Research or collect creative sources, including Telegram | [Research](../contentfactory-research/SKILL.md) |
 
-For new productions or substantial creative recuts, complete the screenwriter-to-director handoff before assembly, then proactively obtain missing moving coverage within existing authorization and budget. For advertising, also read [advertising](references/advertising.md) for evidence and edit safeguards. For a timecode/scene revision, read [small edits](references/small-edits.md). Ordinary low-impact edits do not need a new research campaign or storyboard approval; their final video still requires the Gemini audit below.
+Load the specialist for the current decision. A directly invoked specialist follows these shared rules once. Resume completed handoffs. For an ad, use [advertising safeguards](references/advertising.md). For a local video in Grok Build use [local intake](references/grok.md).
 
-For Grok Build requests involving video on the user's PC, read [Grok local-video intake](references/grok.md). It defines the user-authorized native intake/review path and the subsequent ContentFactory transfer.
+## Produce and deliver
 
-## Begin and resume with owned state
+- The screenwriter sets meaning and general scenes. The director stages action, performance, camera, continuity and sound. One agent can perform both roles in order. Script or plan requests stop at their requested deliverable. Narrow edits preserve accepted creative choices.
+- For each essential moving beat, plan an observable action and result. Source authentic movement where it establishes facts. For generated shots, default to the strongest compatible premium video route within authority. Use [model selection and shot validation](../contentfactory-generate/references/video.md). If generated footage cannot deliver, stage supported authored 3D/2D action or surface the gap. Still holds serve a stated purpose, such as reading an end card. Camera drift over stills, animated titles and music cannot replace the main action.
+- Before any generated shot, paid motion test or new authored 3D/2D animation, show the actual inspected reference frames, rough storyboard and proposed object placement for explicit [director package approval](references/director-approval.md). Continue authorized reference preparation while approval is pending. Existing authorized footage and edits without new generated motion can proceed.
+- Verify the exact saved revision and returned artifact. Every final or revised video, including a caption-only edit or transcode, requires [Gemini audit](references/quality-audit.md) through ContentFactory. Submit the complete export up to and including 180 seconds, or ordered video sections covering the full longer export. Repair material defects and audit the corrected export. Treat blocked or incomplete coverage as incomplete review.
 
-Recover the selected project and existing creative task/composition before creating replacements. Keep the brief, script and role handoffs, shot purpose and motion route, justified still exceptions, source pins, episode/scene IDs, accepted choices, revisions, operation/job receipts and review limits in ContentFactory (`creative_task_save/get`, discovered live). Local filenames and version numbers are not the authoritative timeline. A rendered MP4 does not by itself provide editable layer IDs. If only a flattened local video exists, state that migration/reconstruction is needed rather than implying it is already editable server-side.
-
-Before a mutation, establish which project, saved revision, target interval/layer and live operation will carry it. For generation, confirm the source/model controls and authorized price. For rendering, discover the supported profile/worker capabilities; do not claim a particular heavy worker ran unless the receipt proves it. Read [execution](references/execution.md) when submitting, transferring or recovering work.
-
-## Always audit the final video with Gemini
-
-Challenge the choice at planning, after the changed interval, and before delivery: does this fulfill the user's actual request; why is this shot here; what evidence would disprove the quality claim? Resolve concrete defects, not hypothetical ones. Preserve earlier accepted corrections.
-
-Use native validation and focused inspection of the returned artifact first. Before completing any final or revised video, including a small caption edit or technical conversion, send the actual final video to **Gemini through ContentFactory for a quality audit**. For duration **up to and including 180 seconds, submit the complete video**; for longer videos, submit ordered video sections covering the entire export, including context across joins. Stills, transcripts and the agent's own review do not replace this step. Read [quality audit](references/quality-audit.md) for submission, coverage, repair and receipt requirements. A plan-only or standalone still request has no final video to audit.
-
-Include the required audit in the production/review budget from the start and reuse existing authorization without asking again whether to audit. Respect explicit source privacy and spending ceilings. If Gemini, a supported whole-video/section transfer, access or authorized budget is unavailable, report the audit as incomplete and the precise blocker; do not silently skip it or claim quality completion. Resolve material findings and audit the corrected final output before delivery as finished. A completed Gemini report supports quality review, not user acceptance or guaranteed commercial effectiveness.
-
-Save final revision, job and output IDs plus concise review coverage server-side. Deliver the actual authorized artifact and editable composition reference, with what changed, verified limitations, and settled cost when known. Do not report a queued job as a finished render or local output as a ContentFactory result.
+Keep creative state and selected source/output pins, approval, edits and receipts in the project. Deliver the actual artifact and editable revision where applicable, with review coverage, limitations and settled charges when known.

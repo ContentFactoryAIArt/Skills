@@ -54,8 +54,8 @@ Before generated video or new 3D/2D animation, show the actual inspected referen
 frames, a rough storyboard and proposed object placement to the user and wait
 for explicit approval of that package. This includes paid motion tests. Prepare
 authorized stills first, reuse identical accepted packages and reapprove material
-changes to affected scenes. Prefer Seedance 2.5 only through a discovered live,
-configured, compatible and priced model contract. A general budget, model name
+changes to affected scenes. Default to the strongest compatible flagship/premium video route with a live
+model contract and authorized quote. A general budget, model name
 or silence does not establish approval or reference-input support.
 
 ## Retries, Review and Delivery

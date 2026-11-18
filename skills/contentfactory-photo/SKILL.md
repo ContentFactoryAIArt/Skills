@@ -1,12 +1,14 @@
 ---
 name: contentfactory-photo
-description: Correct or edit existing photos, masks and layered image documents, then render or interchange them through ContentFactory. For model-generated images, use contentfactory-generate.
+description: Correct and mask photos or edit, render and interchange layered documents through ContentFactory.
 ---
 
-# contentfactory photo
+# ContentFactory photo
 
-Start with the [ContentFactory workflow](../contentfactory/SKILL.md), which defines the required MCP execution, storage, authorization and recovery boundary. Use this specialist for deterministic photo work; do not replace it with a local image library or another editor when capabilities are unavailable.
+Follow the [shared workflow](../contentfactory/SKILL.md). Inspect the owned original with the correct asset/file or asset/image identity from the live schema.
 
-Inspect the project-owned original and discover the relevant photo or layered-document capabilities. Preserve immutable file pins, document revisions, layer ordering and the user's originals. Use the expected revision and exact idempotency key when the contract requires them. Poll the durable job and inspect requested results; PSD/PSB interchange is limited to the advertised subset. A returned file ID is not an image ID; pass the exact source identity supported by the current `media_image_view` schema.
+- For deterministic pixel work, discover `creative_capabilities` and `photo_process`. Choose the supported operations, output color/alpha requirements and ordered steps for the actual edit.
+- For editable masks, layers or interchange, discover `photo_document_capabilities` and the document operations before editing. Preserve source pins, layer order and expected revision. Check qualified PSD/PSB support if requested. A flattened transparent PNG can satisfy a delivery format, while editable masks require a saved document with masks or layers.
+- For model changes, use [Generate](../contentfactory-generate/SKILL.md). Verify how actual alpha, masks and editable layers will be produced before paying for generation. A generated white background carries no mask.
 
-For generation followed by background removal/editable delivery, verify the complete masking, true-alpha export and editable-document persistence path before paying for generation. Retain the original and saved mask/layer/document revision where supported. A white background, returned file ID or flattened transparent PNG is not proof of an editable mask; report unsupported parts explicitly.
+Keep the original, get the durable result and verify the returned image or document revision. Inspect the changed pixels, mask borders, alpha and interchange fidelity where relevant. See [operation routes](../contentfactory/references/operation-routes.md).

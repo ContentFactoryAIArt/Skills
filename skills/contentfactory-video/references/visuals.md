@@ -24,7 +24,7 @@ video, paid motion tests or newly authored 3D/2D animation rendering. Preparing
 authorized reference stills is allowed first; a prose plan alone is not a frame.
 Reuse approval of the same version, but reapprove materially changed references,
 action or placement in the affected beat. No reply or general production budget
-is not approval. Prefer a live configured compatible Seedance 2.5 route with the
+is not approval. Prefer the strongest live compatible premium video route with the
 approved references and authorized quote; do not infer source slots from its name.
 
 Discover `generation_models_list` and the selected model schema, preflight the

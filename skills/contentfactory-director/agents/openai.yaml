@@ -1,4 +1,4 @@
 interface:
   display_name: "ContentFactory Director & Producer"
   short_description: "Film the script as purposeful moving scenes"
-  default_prompt: "Use $contentfactory-director after the screenwriter to prepare inspected reference frames, a rough storyboard and proposed object placement for my approval before video generation, preferring compatible Seedance 2.5."
+  default_prompt: "Use $contentfactory-director after the screenwriter to prepare inspected reference frames, a rough storyboard and proposed object placement for my approval before video generation, using the strongest compatible premium video route."

@@ -23,9 +23,9 @@ approval before video generation, paid motion tests or newly authored 3D/2D
 animation rendering. Reuse approval for the identical reviewed package; material
 reference/action/layout changes need approval of the affected revision. Prepare
 reviewable material within existing authority before asking. Host activation
-consent, a production budget and silence do not approve unseen staging. Prefer
-Seedance 2.5 only when current discovery and quotation establish a compatible
-configured choice; discover actual model IDs and explain an unavailable route.
+consent, a production budget and silence do not approve unseen staging. Use the
+same [premium model selection](../../contentfactory-generate/references/video.md)
+on every host.
 
 Every host must retain the final [Gemini quality audit](../../contentfactory/references/quality-audit.md)
 through ContentFactory: submit the whole exact final video up to and including

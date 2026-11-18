@@ -94,5 +94,5 @@ relative scale, foreground/background, interaction paths and occlusion risks for
 important subjects and objects. Show this concrete package and viewable frames
 to the user and obtain explicit approval before generated video, paid motion
 tests or newly authored 3D/2D animation renders. Reuse the same approved package;
-material changes return the affected beat for approval. Prefer Seedance 2.5 only
-when the discovered configured route supports the references, scene and quote.
+material changes return the affected beat for approval. Prefer the strongest compatible premium model that
+supports the approved references, scene and authorized quote.

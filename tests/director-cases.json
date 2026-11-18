@@ -131,6 +131,66 @@
       "id": "uncertain-generation",
       "request": "We are creating a 20-second ad. A key illustrative generation timed out after submission, with operation receipt op-demo-7 and 4 units possibly reserved. Total approved budget is 10 units; 6 are already settled. No completed output is known. Other authorized project assets remain searchable at no additional charge. Continue in dry-run mode: state the next requests and how the missing beat will be handled.",
       "criteria": ["Recovers receipt and reconciles uncertainty before new spend", "Does not assume 4 units remain freely available", "Continues authorized asset search", "Preserves narrative purpose when changing route", "Does not invent success or discard prior operation identity"]
+    },
+    {
+      "id": "premium-live-slot-mismatch",
+      "request": "Continue the 20-second vertical bottle ad. The approved first-frame product image must remain conditioning. The text-only catalog flagship quotes $9 and a configured premium image-to-video model with a supported first-frame slot and 1080p output quotes $7. A compatible Fast model quotes $2. Production authority is $8 after the audit allocation. No media jobs in this exercise. Give the selection and exact next steps.",
+      "criteria": [
+        "Excludes higher-priced text-only route because required conditioning is unavailable",
+        "Defaults to the compatible premium route and preserves the approved owned reference",
+        "Describes the envelope and model revision, exact schema, supported source binding and request preflight",
+        "Does not select Fast on price alone or infer total film cost from one take"
+      ]
+    },
+    {
+      "id": "premium-equivalent-tier",
+      "request": "Choose a production model for the approved shot. Two live Pro routes have the same supported reference controls, resolution and duration, and project tests showed comparable motion and product fidelity. Preflight quotes for the same request are 5 and 7. Spend authority after final audit is 8. A Fast route quotes 1. Dry-run only.",
+      "criteria": [
+        "Prefers the higher-priced equivalent production tier within authority",
+        "Accounts for other commitments in the ceiling",
+        "Does not treat price alone as proof of superior motion",
+        "Reports the selected route, quote and scope as a decision without creating footage"
+      ]
+    },
+    {
+      "id": "polished-but-static-take",
+      "request": "The approved shot is a glass bottle filling, with a hand tightening the cap. The rendered take looks good, but playback shows only a push-in over a fixed water line and rigid fingers. The job settled and only one authorized retake remains. Diagnose and dry-run the next action.",
+      "criteria": [
+        "Rejects camera-only motion using expected and observed action in the exact interval",
+        "Reuses approved staging and source pins, or returns material changes to approval",
+        "Makes one specific corrective change or identifies why no useful retake is feasible",
+        "Preflights the retake after reconciling prior costs, then checks real playback and final audit coverage"
+      ]
+    },
+    {
+      "id": "standalone-audio-dsp",
+      "request": "Clean measured mains hum in the selected ContentFactory podcast recording. Keep the WAV unchanged and retain settings for further editing. Dry-run the route and verification.",
+      "criteria": [
+        "Uses Media, media_probe, native capability discovery and supported ordered audio processing",
+        "Uses a derived owned output and preserves the original plus exact processing settings and receipt",
+        "Checks intelligibility, levels and residual hum using available evidence",
+        "Keeps this audio-only request outside the film and video-audit flow"
+      ]
+    },
+    {
+      "id": "scoped-timeline-effect",
+      "request": "In the approved composition, replace the typography effect at 00:08 with a supported subtler treatment. Preserve the rest of the approved film, sound and titles. Dry-run only.",
+      "criteria": [
+        "Routes to Composition and discovers the installed effect and exact target revision/layer",
+        "Uses an atomic revision-scoped edit and checks the changed range and joins",
+        "Uses whole final-video Gemini review when producing the final revision",
+        "Avoids a new storyboard, filmed footage or fallback provider"
+      ]
+    },
+    {
+      "id": "editable-layered-photo",
+      "request": "Remove a backdrop behind a product photo while preserving an editable mask and an original. I also need a PNG with real transparency. Dry-run the path.",
+      "criteria": [
+        "Routes precise masking to Photo and discovers editable photo-document and alpha capabilities",
+        "Preserves original and saved mask/document revision and derives a separate rendered PNG",
+        "Checks alpha and edge behavior",
+        "Does not substitute a generated white background or flattened only result"
+      ]
     }
   ]
 }

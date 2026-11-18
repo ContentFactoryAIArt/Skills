@@ -1,6 +1,6 @@
 ---
 name: contentfactory-video
-description: Create and edit photos, videos, effects, vector artwork, audio and 3D scenes with ContentFactory. Use for photo corrections and masks, video timelines and captions, Blender animation, Telegram channel/group/forum source collection, editable project handoffs, and complete agent-made videos through ContentFactory MCP. Not for application development or general web research.
+description: Use the legacy standalone ContentFactory workflow when the current ContentFactory skill bundle is unavailable.
 ---
 
 # ContentFactory Creative Work (compatibility entrypoint)
@@ -80,11 +80,13 @@ the identical reviewed version; material changes need approval of the affected
 beat. A general budget or silence is not approval of unseen scenes. Narrow edits
 without new generated footage do not restart this gate.
 
-Prefer Seedance 2.5 when live model discovery exposes a configured, compatible,
-priced route supporting the approved reference conditioning and budget. Discover
-the actual model/provider and current model contract; a familiar name is not
-proof of image-input support. Explain necessary alternatives rather than silently
-switching models or generating text-only video without the approved references.
+Default to the strongest compatible flagship or premium video model in the live
+catalog, at production quality within budget. Consider Seedance 2.5 when listed,
+then compare by required references, observed motion and subject fidelity. Prefer
+the higher production tier or price for comparably suitable routes. Quote the
+exact shot before submitting, preserve approved reference conditioning and
+disclose necessary alternatives. Default to Fast or Lite only when requested
+for speed/economy or disclosed because premium routes cannot qualify.
 
 For moving-picture work, purposeful movement is the default. Do not assemble
 static pictures with text and narration as the normal production strategy.

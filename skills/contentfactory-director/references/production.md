@@ -135,11 +135,7 @@ Choose the route that serves the shot:
   reference assets and model capabilities suited to the shot's actual demands.
 
 For a moving scene built from still sources, discover a suitable image-to-video
-or other video model first. Prefer Seedance 2.5 when the live configured catalog,
-supported reference inputs and quote make it suitable. Discover actual IDs and
-the exact model schema rather than hard-coding a provider alias, price or limit.
-If unavailable or unsuitable, explain the reason before selecting a supported
-alternative within existing authorization and reviewed staging. A generated
+or other video model first. Follow [premium model selection and preflight](../../contentfactory-generate/references/video.md). A generated
 still is an intermediate, not the finished
 scene: specify subject/object action, development, ending, continuity and usable
 duration, obtain the reference/storyboard approval, then generate and inspect

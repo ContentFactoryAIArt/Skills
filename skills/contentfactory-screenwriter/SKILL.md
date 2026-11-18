@@ -1,6 +1,6 @@
 ---
 name: contentfactory-screenwriter
-description: Write the meaning, narrative progression and general scenes for videos, advertisements, films and substantial creative recuts before the director plans filming. Use for scripts and story development within the ContentFactory workflow; not ordinary prose, camera planning or isolated technical edits.
+description: Write the story and general scenes for a new ContentFactory film, ad or substantial recut before the director plans shots.
 ---
 
 # Screenwriter

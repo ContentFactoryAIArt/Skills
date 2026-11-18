@@ -53,7 +53,7 @@ You can ask for the board before rendering when you want creative control:
 После согласования собери ролик в ContentFactory.
 ```
 
-Even when you ask to produce the ad directly, generated video waits for your approval of the actual reference frames, rough storyboard and proposed object placement. An initial production budget alone is not approval of an unseen package. After approval Codex proceeds through production and the final Gemini audit without repeating the same question; material changes to the affected beat are shown again. Seedance 2.5 is preferred when a live configured route supports the approved references and authorized quote; unavailable or incompatible choices are disclosed. Caption edits and technical conversions without new generated scenes do not restart storyboard approval.
+Even when you ask to produce the ad directly, generated video waits for your approval of the actual reference frames, rough storyboard and proposed object placement. An initial production budget alone is not approval of an unseen package. After approval Codex proceeds through production and the final Gemini audit without repeating the same question; material changes to the affected beat are shown again. Premium production models are the default. The director compares compatible flagship routes for motion, reference fidelity and output quality, then checks the exact quote. If a suitable premium route is unavailable or exceeds the authorized budget, the director explains the tradeoff. Caption edits and technical conversions without new generated scenes do not restart storyboard approval.
 
 ## Ask for a correction by timecode and desired result
 

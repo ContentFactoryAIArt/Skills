@@ -1,5 +1,7 @@
 # Execute, store and recover through ContentFactory
 
+Use connected ContentFactory operations for creative collection, generation, inspection, editing, rendering and project assets, including a one-caption change. Use local tools for instruction maintenance, authorized documented transfers and viewing returned artifacts. A missing operation, connection or grant does not authorize local media processors, a direct provider or another renderer. Follow explicit execution-path overrides within the user's authorization and disclose them before use. Keep private sources, prompts and credentials out of logs and memory.
+
 ## Live discovery and receipts
 
 Use the configured ContentFactory connection, not an unrelated server with a similar tool name. Use available trusted connection metadata; never expose credentials while checking it. The connected Media, Compose and Generate surfaces share owned project/asset IDs. An opaque client label alone is not evidence of a different backend or permission to bypass it.
@@ -24,7 +26,7 @@ Read exact composition revision and relevant stable layer/scene IDs. Discover ca
 
 Before audio-enabled rendering, validate the intended revision with `inspectAudioMix=true`; inspect the mix inspection status as well as general validation. Resolve clipping explicitly; do not silently limit or claim a valid document proves headroom. Request `composition_render` for the exact saved revision with the live `profileId` and `capabilityRevision`. This starts a durable ContentFactory job; it is separate from saving/editing the timeline. Report worker/executor identity only if returned. A local/native renderer mentioned by server capability text is server execution, not authorization to run a desktop renderer.
 
-Before generating new footage or authored animation, recover the user's approval of the [concrete reference frames, rough storyboard and proposed placement](director-approval.md). Preparing authorized reference stills can precede approval; video jobs and paid motion tests cannot. Approval must cover the current package, with material changes reapproved for the affected beat. Prefer Seedance 2.5 only after live model/provider/schema and quote checks; budget and a familiar model name do not substitute for creative approval or source-conditioning support.
+Before generating new footage or authored animation, recover the user's approval of the [concrete reference frames, rough storyboard and proposed placement](director-approval.md). Preparing authorized reference stills can precede approval; video jobs and paid motion tests cannot. Approval must cover the current package, with material changes reapproved for the affected beat. Use the [premium generation workflow](../../contentfactory-generate/references/video.md) for model fit, reference binding and quote checks.
 
 Poll `composition_jobs_get` (or supported batch status) on the same job handle until terminal. A slow poll/timeout is not a failed job and does not justify resubmission. Fetch `composition_artifact_get` and the exact output asset after success; compare the job's saved composition/source revisions with the requested correction before treating a recovered artifact as current. Native preview/validation, rendered artifact checks and user creative acceptance are distinct proof layers.
 

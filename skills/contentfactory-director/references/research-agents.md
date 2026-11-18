@@ -1,10 +1,58 @@
 # Creative agents and portable director skills
 
-Research checked on 2026-11-13. Read this reference when maintaining the skill,
+Upstream skill and model-guide research updated on 2026-11-18. Read this reference when maintaining the skill,
 choosing a host adaptation, or checking why a workflow decision was made. It is
 evidence for the skill design, not a requirement to read every source on every job.
 
-## Scope and evidence
+## HyperFrames and OpenMontage, 2026-11-18
+
+| Upstream evidence | Adaptation in ContentFactory | What the evidence measures |
+| --- | --- | --- |
+| HyperFrames uses scene structure, intent-aware motion checks, revision-specific snapshots and a render benchmark. Its motion doctrine tracks cause and continuity across cuts. [HF1–HF4] | Carry causal motion and join state in the [shot card](shot-planning.md). Use exact-revision composition validation, focused previews, and playback of the returned motion and final artifact through the [operation routes](../../contentfactory/references/operation-routes.md). Use an intentional cut where continuity does not call for a matched motion. | The published producer fixture reports capture/encode timing for specific renders. Its motion checks assess declared properties. These do not measure creative quality, viewer preference or ContentFactory speed. |
+| OpenMontage distinguishes moving footage from still-led treatments, routes by model capability, and has fixture checks that reject a motion-led promise backed only by stills. Its replay harness separates deterministic and threshold-based evaluation. [OM1–OM4] | Select authentic motion where it proves a claim, compare premium models by the exact shot and source slots, inspect the hardest take and reject camera-only motion. Use dry-run workflow cases and live schema checks before claiming support. Keep the project pins, preflight, execution, import and artifact inside ContentFactory. | Its fixture checks exercise planning/enforcement, its media-use harness checks asset adoption/metadata/cache behavior, and its replay harness is an evaluation scaffold. Sample reels are maker examples. There is no comparable creative win rate across the two stacks in these sources. |
+
+The upstream checklists, evaluators and performance fixtures were read at the linked commits. Their code was not run for this comparison. The adaptation uses ContentFactory contracts for execution and does not install upstream runtimes, provider APIs, telemetry or asset stores.
+
+### Rankings belong to the workload
+
+Artificial Analysis ranks generated video through pairwise human preference within separate workloads. Its public text-to-video and image-to-video rankings describe tested model variants, not every provider binding. HKU publishes separate text-only and text+image results. Use their exact evaluation task and variant as shortlist evidence and use a project's verified takes for the actual shot when available. [V1–V3]
+
+On 2026-11-18, live ContentFactory discovery returned 41 video model entries in the inspected project. The advertised Seedance 2.5, Wan 3.0 Prime, Veo 3.1 and Kling v3.0 Pro entries had no bound media slots in their described generation schemas. Kling 3.0 Turbo exposed image slots, and the named Vertex AI Veo 3.1 entry exposed first and last frame slots but reported unconfigured. These observations illustrate the compatibility rule. Rediscover before use. Catalog metadata and schema reads do not establish a provider submission, final price or generated quality.
+
+### Changes for GPT-6 and Claude 5.2+
+
+- OpenAI's GPT-6 Astra skill guidance favors short discriminating descriptions and a minimal router backed by references. The GPT-6.2 guide emphasizes the desired result, relevant context, workflow boundaries and completion evidence. The main, director and generation skills now expose those decisions up front and load model, review and tool details only for the current task. [G1–G2]
+- Anthropic's Claude Fable/Mythos 5.2 guidance distinguishes completion from intermediate progress and recommends scoped approval conditions. Claude Opus 5.5 guidance addresses unattended work and over-verification. Claude's skill authoring and Claude Code guides recommend progressive disclosure and evaluations. The shared files use portable frontmatter, state explicit finish conditions and reserve approvals for defined actions. One timed shot example demonstrates the desired output while small edits keep a focused path. [C1–C4]
+- Record baseline/candidate results on the same fictional inputs, effects, missing capabilities and authorization conditions. Score observable decisions such as route, correct operation, reference preservation, paid-action admission and verified coverage. Keep host discovery, model judgment and rendered media acceptance as separate evidence. Avoid requiring a particular response style or fictional tool-call success. [G3]
+
+[HF1] https://github.com/heygen-com/hyperframes/blob/a82ee10c68cef925d9bf949e528db08bec4f1f9d/skills/hyperframes/SKILL.md
+[HF2] https://github.com/heygen-com/hyperframes/blob/a82ee10c68cef925d9bf949e528db08bec4f1f9d/.agents/skills/motion-doctrine/SKILL.md
+[HF3] https://github.com/heygen-com/hyperframes/blob/a82ee10c68cef925d9bf949e528db08bec4f1f9d/skills/hyperframes-cli/references/lint-validate-inspect.md
+[HF4] https://github.com/heygen-com/hyperframes/blob/a82ee10c68cef925d9bf949e528db08bec4f1f9d/packages/producer/tests/perf/benchmark-results.json
+
+[OM1] https://github.com/OpenMontageInc/OpenMontage/blob/2e003e65fa99a0f329478a2c1cdcf26bc481933a/.agents/skills/ai-video-gen/SKILL.md
+[OM2] https://github.com/OpenMontageInc/OpenMontage/blob/2e003e65fa99a0f329478a2c1cdcf26bc481933a/tests/eval/bench_runner.py
+[OM3] https://github.com/OpenMontageInc/OpenMontage/blob/2e003e65fa99a0f329478a2c1cdcf26bc481933a/tests/eval/replay_harness/harness.py
+[OM4] https://github.com/OpenMontageInc/OpenMontage/blob/2e003e65fa99a0f329478a2c1cdcf26bc481933a/.agents/skills/media-use/scripts/eval.mjs
+
+[V1] https://artificialanalysis.ai/methodology/video
+[V2] https://artificialanalysis.ai/video/leaderboard/image-to-video
+[V3] https://www.hkubs.hku.hk/aiel/leaderboards/video_generation.html
+
+[G1] https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra
+[G2] https://developers.openai.com/api/docs/guides/latest-model
+[G3] https://developers.openai.com/blog/eval-skills
+
+[C1] https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2
+[C2] https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5
+[C3] https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices
+[C4] https://code.claude.com/docs/en/skills
+
+### Workflow dry runs
+
+Four matched scenarios compared the old and revised instructions. Both versions routed a bottle ad, a static take, standalone podcast noise and a timeline typography edit. The revised version provided an explicit flagship-versus-Fast choice, an expected-versus-observed take note, and discoverable DSP and timeline effect operations. Three additional candidate scenarios exercised missing reference slots, equally capable Pro tiers at different prices, and editable photo masking. These were independent instruction-level dry runs with fictional inputs. The live verification was read-only schema and capability discovery.
+
+## Earlier research and tools, 2026-11-13
 
 The comparison covers three research systems and three commercial production
 workflows. Research papers, public implementation files, and vendor documentation

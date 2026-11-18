@@ -19,8 +19,6 @@ Record what package/version and scenes the user actually approved. Existing expl
 
 If a reference, composition/object layout, action, identity, meaning or material filming choice changes, update the concrete affected beat and obtain approval for that revision before generating its replacement. Preserve approval for untouched scenes. In particular, re-stage and approve an animation fallback when it materially changes the accepted plan. A model change that preserves the approved staging must still be disclosed and satisfy provider, source/privacy and cost authority; never claim model preference is permission to spend or transfer private material.
 
-## Prefer Seedance 2.5 through the live catalog
+## Choose the production route
 
-For model-generated video, prefer Seedance 2.5 when actually listed, configured and compatible with the reviewed image conditioning, action, duration, resolution and authorized price. Discover the provider/route, exact model ID, source slots, current `modelContractRevision` and quote through ContentFactory; do not hard-code a remembered ID, SKU or tariff. Prefer image-conditioned execution with the inspected approved frames and bind only supported fields. Do not silently replace approved references with text-only generation.
-
-If the preferred route is absent, unconfigured, unpriced, over budget or incompatible, report the specific reason and choose a viable disclosed alternative within the user's authority. Reapprove affected staging where necessary. A public KIE.ai or original-provider price is useful comparison evidence, not proof of ContentFactory's current customer quote or provider readiness. Keep output-mode, resolution, audio, source-video conditioning, token/second units, currency and promotions aligned when comparing prices.
+Use the [premium video model workflow](../../contentfactory-generate/references/video.md) for the approved shot, reference binding and exact preflight. A public benchmark or provider tariff informs the shortlist. The ContentFactory response determines current compatibility and quote.
